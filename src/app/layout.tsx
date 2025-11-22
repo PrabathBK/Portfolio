@@ -12,12 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Prabath Wijethilaka | FPGA & Hardware Acceleration Engineer",
+  title: "Prabath Wijethilaka",
   description: "Portfolio of Prabath Wijethilaka - Electronic & Telecommunication Engineering undergraduate specializing in FPGA Design, RISC-V, and Hardware Acceleration",
   keywords: ["FPGA", "Hardware Acceleration", "RISC-V", "Computer Architecture", "Portfolio", "Engineering"],
   authors: [{ name: "Prabath Wijethilaka" }],
   openGraph: {
-    title: "Prabath Wijethilaka | FPGA & Hardware Acceleration Engineer",
+    title: "Prabath Wijethilaka",
     description: "Portfolio showcasing FPGA projects, hardware acceleration work, and engineering achievements",
     type: "website",
   },
