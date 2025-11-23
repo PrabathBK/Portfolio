@@ -32,31 +32,31 @@ const categoryColors: Record<string, { bg: string; text: string; icon: string; g
     bg: 'bg-blue-100 dark:bg-blue-900/30',
     text: 'text-blue-700 dark:text-blue-300',
     icon: 'text-blue-600 dark:text-blue-400',
-    gradient: 'from-blue-600 to-cyan-600',
+    gradient: 'from-blue-600 to-blue-800',
   },
   'IoT': {
-    bg: 'bg-green-100 dark:bg-green-900/30',
-    text: 'text-green-700 dark:text-green-300',
-    icon: 'text-green-600 dark:text-green-400',
-    gradient: 'from-green-600 to-emerald-600',
+    bg: 'bg-blue-100 dark:bg-blue-900/30',
+    text: 'text-blue-700 dark:text-blue-300',
+    icon: 'text-blue-600 dark:text-blue-400',
+    gradient: 'from-blue-600 to-blue-800',
   },
   'Embedded Systems': {
-    bg: 'bg-purple-100 dark:bg-purple-900/30',
-    text: 'text-purple-700 dark:text-purple-300',
-    icon: 'text-purple-600 dark:text-purple-400',
-    gradient: 'from-purple-600 to-pink-600',
+    bg: 'bg-blue-100 dark:bg-blue-900/30',
+    text: 'text-blue-700 dark:text-blue-300',
+    icon: 'text-blue-600 dark:text-blue-400',
+    gradient: 'from-blue-600 to-blue-800',
   },
   'Healthcare': {
-    bg: 'bg-pink-100 dark:bg-pink-900/30',
-    text: 'text-pink-700 dark:text-pink-300',
-    icon: 'text-pink-600 dark:text-pink-400',
-    gradient: 'from-pink-600 to-rose-600',
+    bg: 'bg-blue-100 dark:bg-blue-900/30',
+    text: 'text-blue-700 dark:text-blue-300',
+    icon: 'text-blue-600 dark:text-blue-400',
+    gradient: 'from-blue-600 to-blue-800',
   },
   'Entrepreneurship': {
-    bg: 'bg-orange-100 dark:bg-orange-900/30',
-    text: 'text-orange-700 dark:text-orange-300',
-    icon: 'text-orange-600 dark:text-orange-400',
-    gradient: 'from-orange-600 to-amber-600',
+    bg: 'bg-blue-100 dark:bg-blue-900/30',
+    text: 'text-blue-700 dark:text-blue-300',
+    icon: 'text-blue-600 dark:text-blue-400',
+    gradient: 'from-blue-600 to-blue-800',
   },
 };
 
@@ -66,7 +66,7 @@ export default function AchievementsPage() {
   const runnersUpCount = awards.filter(a => a.title.toLowerCase().includes('runners-up')).length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12">
+    <div className="min-h-screen bg-white dark:bg-black py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -80,12 +80,12 @@ export default function AchievementsPage() {
             transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
             className="inline-block mb-6"
           >
-            <div className="p-4 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full">
+            <div className="p-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full">
               <Trophy className="w-12 h-12 text-white" />
             </div>
           </motion.div>
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-600 via-orange-600 to-red-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
             Achievements & Awards
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
@@ -102,11 +102,11 @@ export default function AchievementsPage() {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 text-center relative overflow-hidden"
+            className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-400/20 to-orange-500/20 rounded-full -mr-16 -mt-16" />
-            <Trophy className="w-12 h-12 text-yellow-600 dark:text-yellow-400 mx-auto mb-3" />
-            <div className="text-4xl font-bold text-yellow-600 dark:text-yellow-400 mb-2">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
+            <Trophy className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
               {awards.length}
             </div>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -116,9 +116,9 @@ export default function AchievementsPage() {
 
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 text-center relative overflow-hidden"
+            className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-cyan-500/20 rounded-full -mr-16 -mt-16" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
             <Medal className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
             <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
               {championshipsCount}
@@ -130,11 +130,11 @@ export default function AchievementsPage() {
 
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 text-center relative overflow-hidden"
+            className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full -mr-16 -mt-16" />
-            <Star className="w-12 h-12 text-purple-600 dark:text-purple-400 mx-auto mb-3 fill-purple-600 dark:fill-purple-400" />
-            <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
+            <Star className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3 fill-blue-600 dark:fill-blue-400" />
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
               {runnersUpCount}
             </div>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -144,11 +144,11 @@ export default function AchievementsPage() {
 
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 text-center relative overflow-hidden"
+            className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-400/20 to-emerald-500/20 rounded-full -mr-16 -mt-16" />
-            <Award className="w-12 h-12 text-green-600 dark:text-green-400 mx-auto mb-3" />
-            <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
+            <Award className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
               International
             </div>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -175,7 +175,7 @@ export default function AchievementsPage() {
                 className="group"
               >
                 <Link href={`/achievements/${award.id}`}>
-                  <div className="h-full bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300">
+                  <div className="h-full bg-white dark:bg-gray-900 rounded-3xl overflow-hidden shadow-lg border border-gray-200 dark:border-blue-900 hover:shadow-2xl transition-all duration-300">
                     {/* Image Section */}
                     {award.image && (
                       <div className="relative h-56 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 overflow-hidden">
@@ -196,11 +196,11 @@ export default function AchievementsPage() {
 
                         {/* Award Type Badge */}
                         <div className="absolute bottom-4 left-4">
-                          <div className="flex items-center gap-2 px-3 py-1.5 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-full">
+                          <div className="flex items-center gap-2 px-3 py-1.5 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm rounded-full">
                             {award.title.includes('Champion') ? (
                               <>
-                                <Trophy className="w-4 h-4 text-yellow-600" />
-                                <span className="text-sm font-bold text-yellow-600">Champion</span>
+                                <Trophy className="w-4 h-4 text-blue-600" />
+                                <span className="text-sm font-bold text-blue-600">Champion</span>
                               </>
                             ) : award.title.includes('Runners-Up') ? (
                               <>
@@ -209,8 +209,8 @@ export default function AchievementsPage() {
                               </>
                             ) : (
                               <>
-                                <Award className="w-4 h-4 text-purple-600" />
-                                <span className="text-sm font-bold text-purple-600">Award</span>
+                                <Award className="w-4 h-4 text-blue-600" />
+                                <span className="text-sm font-bold text-blue-600">Award</span>
                               </>
                             )}
                           </div>
@@ -234,7 +234,7 @@ export default function AchievementsPage() {
                       </p>
 
                       {/* Organization */}
-                      <div className={`pt-4 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between`}>
+                      <div className={`pt-4 border-t border-gray-200 dark:border-blue-900 flex items-center justify-between`}>
                         <div className="flex items-center gap-2">
                           <div className={`p-2 ${colors.bg} rounded-lg`}>
                             <Award className={`w-4 h-4 ${colors.icon}`} />

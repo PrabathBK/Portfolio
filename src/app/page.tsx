@@ -37,7 +37,7 @@ export default function Home() {
   const latestNews = news[0];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 dark:from-gray-900 dark:via-blue-950 dark:to-purple-950 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/30 dark:from-black dark:via-blue-950/30 dark:to-blue-900/20 relative overflow-hidden">
       {/* Professional Background Animation - Subtle Gradient Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -69,7 +69,7 @@ export default function Home() {
           style={{ top: '50%', right: '10%' }}
         />
         <motion.div
-          className="absolute w-80 h-80 rounded-full bg-pink-400/10 dark:bg-pink-500/10 blur-3xl"
+          className="absolute w-80 h-80 rounded-full bg-blue-400/10 dark:bg-blue-600/20 blur-3xl"
           animate={{
             x: [0, 60, 0],
             y: [0, -80, 0],
@@ -95,7 +95,7 @@ export default function Home() {
             variants={itemVariants}
             whileHover={{ scale: 1.01, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
             transition={{ duration: 0.3 }}
-            className="md:col-span-2 lg:row-span-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700"
+            className="md:col-span-2 lg:row-span-2 bg-white dark:bg-gray-900 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-300 dark:border-blue-900"
           >
             <div className="flex flex-col md:flex-row gap-8 h-full">
               <div className="flex-shrink-0">
@@ -110,7 +110,7 @@ export default function Home() {
               </div>
               <div className="flex-1 flex flex-col justify-between">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <h1 className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
                     {personalInfo.name}
                   </h1>
                   <p className="text-xl text-gray-600 dark:text-gray-300 mb-4">
@@ -143,10 +143,10 @@ export default function Home() {
               rotateZ: [0, -0.5, 0.5, 0]
             }}
             transition={{ duration: 0.4 }}
-            className="lg:row-span-2 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-6 shadow-xl text-white group cursor-pointer overflow-hidden relative"
+            className="lg:row-span-2 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 shadow-xl text-white group cursor-pointer overflow-hidden relative"
           >
             <motion.div
-              className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100"
+              className="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-900 opacity-0 group-hover:opacity-100"
               transition={{ duration: 0.5 }}
             />
             <Link href={`/projects/${topProject.id}`} className="block h-full relative z-10">
@@ -185,13 +185,13 @@ export default function Home() {
             variants={itemVariants}
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ duration: 0.3 }}
-            className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 cursor-pointer group"
+            className="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-blue-900 cursor-pointer group"
           >
             <Link href="/achievements" className="block h-full">
               <div className="flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
-                    <Award className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
+                  <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                    <Award className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                   </div>
                   <span className="text-sm text-gray-500 dark:text-gray-400">
                     Latest Achievement
@@ -203,7 +203,7 @@ export default function Home() {
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-3">
                   {latestAward.description}
                 </p>
-                <div className="mt-auto pt-3 border-t border-gray-200 dark:border-gray-700">
+                <div className="mt-auto pt-3 border-t border-gray-300 dark:border-blue-900">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     {latestAward.date}
                   </p>
@@ -217,7 +217,7 @@ export default function Home() {
             variants={itemVariants}
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700"
+            className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl border border-gray-300 dark:border-blue-900"
           >
             <div className="flex flex-col h-full">
               <div className="flex items-center gap-3 mb-4">
@@ -237,7 +237,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2">
                 {currentRole.description}
               </p>
-              <div className="mt-auto pt-3 border-t border-gray-200 dark:border-gray-700">
+              <div className="mt-auto pt-3 border-t border-gray-300 dark:border-gray-700">
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   {currentRole.startDate} - {currentRole.endDate}
                 </p>
@@ -250,7 +250,7 @@ export default function Home() {
             variants={itemVariants}
             whileHover={{ scale: 1.05, y: -5 }}
             transition={{ duration: 0.3 }}
-            className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 cursor-pointer group"
+            className="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-blue-900 cursor-pointer group"
           >
             <Link href={`/news/${latestNews.id}`} className="block h-full">
               <div className="flex flex-col h-full">
@@ -268,7 +268,7 @@ export default function Home() {
                 <p className="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-3">
                   {latestNews.description}
                 </p>
-                <div className="mt-auto pt-3 border-t border-gray-200 dark:border-gray-700">
+                <div className="mt-auto pt-3 border-t border-gray-300 dark:border-blue-900">
                   <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-xs font-medium">
                     {latestNews.category}
                   </span>
@@ -283,10 +283,10 @@ export default function Home() {
             whileHover={{ 
               scale: 1.05, 
               y: -5,
-              boxShadow: "0 25px 50px -12px rgba(168, 85, 247, 0.5)"
+              boxShadow: "0 25px 50px -12px rgba(37, 99, 235, 0.5)"
             }}
             transition={{ duration: 0.3 }}
-            className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 shadow-xl text-white group cursor-pointer"
+            className="bg-gradient-to-br from-blue-600 to-blue-800 dark:from-blue-600 dark:to-blue-800 rounded-2xl p-6 shadow-xl text-white group cursor-pointer"
           >
             <Link href="/cv" className="block h-full">
               <div className="flex flex-col justify-between h-full">
@@ -308,7 +308,7 @@ export default function Home() {
           {/* Contact Details */}
           <motion.div
             variants={itemVariants}
-            className="md:col-span-2 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700"
+            className="md:col-span-2 bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-xl border border-gray-300 dark:border-blue-900"
           >
             <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Get in touch</h3>
             
@@ -316,7 +316,7 @@ export default function Home() {
               {/* Email Card */}
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="flex flex-col justify-center p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 transition-all hover:shadow-lg group"
+                className="flex flex-col justify-center p-4 bg-gray-50 dark:bg-black rounded-xl border border-gray-300 dark:border-blue-900 hover:border-blue-500 dark:hover:border-blue-500 transition-all hover:shadow-lg group"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Mail className="w-5 h-5 text-blue-600 dark:text-blue-400" />
@@ -332,7 +332,7 @@ export default function Home() {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col justify-center p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-gray-900 dark:hover:border-white transition-all hover:shadow-lg group"
+                className="flex flex-col justify-center p-4 bg-gray-50 dark:bg-black rounded-xl border border-gray-300 dark:border-blue-900 hover:border-gray-900 dark:hover:border-white transition-all hover:shadow-lg group"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Github className="w-5 h-5 text-gray-900 dark:text-white" />
@@ -348,7 +348,7 @@ export default function Home() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col justify-center p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-700 dark:hover:border-blue-500 transition-all hover:shadow-lg group"
+                className="flex flex-col justify-center p-4 bg-gray-50 dark:bg-black rounded-xl border border-gray-300 dark:border-blue-900 hover:border-blue-700 dark:hover:border-blue-500 transition-all hover:shadow-lg group"
               >
                 <div className="flex items-center gap-2 mb-2">
                   <Linkedin className="w-5 h-5 text-blue-700 dark:text-blue-400" />
@@ -360,7 +360,7 @@ export default function Home() {
               </a>
 
               {/* Location Card */}
-              <div className="flex flex-col justify-center p-4 bg-white dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700">
+              <div className="flex flex-col justify-center p-4 bg-gray-50 dark:bg-black rounded-xl border border-gray-300 dark:border-blue-900">
                 <div className="flex items-center gap-2 mb-2">
                   <Briefcase className="w-5 h-5 text-green-600 dark:text-green-400" />
                   <span className="font-semibold text-gray-900 dark:text-white">Location</span>

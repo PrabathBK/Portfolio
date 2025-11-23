@@ -27,7 +27,7 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        className="relative h-[60vh] min-h-[500px] bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 overflow-hidden"
+        className="relative h-[60vh] min-h-[500px] bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 overflow-hidden"
       >
         {/* Animated Background Particles */}
         <div className="absolute inset-0">
@@ -189,7 +189,7 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
               className="prose prose-lg dark:prose-invert max-w-none mb-12"
             >
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-200 dark:border-gray-700">
-                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
                   Details
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
@@ -198,7 +198,7 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
                 
                 {/* Additional content based on category */}
                 {newsItem.category === 'Achievement' && (
-                  <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl border border-blue-200 dark:border-blue-800">
+                  <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl border border-blue-200 dark:border-blue-800">
                     <h3 className="text-xl font-bold mb-3 text-blue-900 dark:text-blue-100">
                       🏆 Achievement Highlights
                     </h3>
@@ -228,7 +228,7 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white"
+              className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white"
             >
               <div className="flex items-center justify-between">
                 <div>

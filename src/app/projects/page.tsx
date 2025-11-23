@@ -56,7 +56,7 @@ export default function ProjectsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-50/50 dark:bg-gray-900 py-12">
+    <div className="min-h-screen bg-white dark:bg-black py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
             Projects
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -87,7 +87,7 @@ export default function ProjectsPage() {
                 className={`px-6 py-2 rounded-full font-medium transition-all ${
                   selectedCategory === category
                     ? 'bg-blue-600 text-white shadow-lg scale-105'
-                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                    : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800'
                 }`}
               >
                 {category}
@@ -117,7 +117,7 @@ export default function ProjectsPage() {
                 exit="exit"
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ duration: 0.3 }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden group relative cursor-pointer"
+                className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-300 dark:border-blue-900 overflow-hidden group relative cursor-pointer"
               >
                 {/* Project Image */}
                 {project.images.length > 0 && (
@@ -129,7 +129,7 @@ export default function ProjectsPage() {
                       className="object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     {project.featured && (
-                      <div className="absolute top-3 right-3 px-3 py-1 bg-yellow-500 text-white text-xs font-bold rounded-full">
+                      <div className="absolute top-3 right-3 px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-full">
                         Featured
                       </div>
                     )}
@@ -173,7 +173,7 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
+                  <div className="flex items-center gap-3 pt-4 border-t border-gray-200 dark:border-blue-900">
                     {project.githubLink && (
                       <a
                         href={project.githubLink}

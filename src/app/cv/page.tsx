@@ -491,7 +491,7 @@ export default function CVPage() {
             </div>
 
             {/* Soft Skills */}
-            <div className="mt-6 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
+            <div className="mt-6 bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-300 dark:border-gray-700">
               <h3 className="text-lg font-semibold mb-3">Soft Skills</h3>
               <div className="flex flex-wrap gap-2">
                 {skills.softSkills.map((skill) => (

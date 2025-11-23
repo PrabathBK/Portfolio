@@ -29,24 +29,24 @@ export default function AchievementDetailPage({ params }: { params: Promise<{ id
       gradient: 'from-blue-600 to-cyan-600',
     },
     'IoT': {
-      bg: 'bg-green-100 dark:bg-green-900/30',
-      text: 'text-green-700 dark:text-green-300',
-      gradient: 'from-green-600 to-emerald-600',
+      bg: 'bg-blue-100 dark:bg-blue-900/30',
+      text: 'text-blue-700 dark:text-blue-300',
+      gradient: 'from-blue-600 to-blue-800',
     },
     'Embedded Systems': {
-      bg: 'bg-purple-100 dark:bg-purple-900/30',
-      text: 'text-purple-700 dark:text-purple-300',
-      gradient: 'from-purple-600 to-pink-600',
+      bg: 'bg-blue-100 dark:bg-blue-900/30',
+      text: 'text-blue-700 dark:text-blue-300',
+      gradient: 'from-blue-600 to-blue-800',
     },
     'Healthcare': {
-      bg: 'bg-pink-100 dark:bg-pink-900/30',
-      text: 'text-pink-700 dark:text-pink-300',
-      gradient: 'from-pink-600 to-rose-600',
+      bg: 'bg-blue-100 dark:bg-blue-900/30',
+      text: 'text-blue-700 dark:text-blue-300',
+      gradient: 'from-blue-600 to-blue-800',
     },
     'Entrepreneurship': {
-      bg: 'bg-orange-100 dark:bg-orange-900/30',
-      text: 'text-orange-700 dark:text-orange-300',
-      gradient: 'from-orange-600 to-amber-600',
+      bg: 'bg-blue-100 dark:bg-blue-900/30',
+      text: 'text-blue-700 dark:text-blue-300',
+      gradient: 'from-blue-600 to-blue-800',
     },
   };
 

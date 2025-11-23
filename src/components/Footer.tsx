@@ -25,7 +25,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black border-t border-gray-200 dark:border-gray-800 mt-20">
+    <footer className="relative bg-white dark:bg-black border-t border-gray-300 dark:border-blue-900 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* About Section */}
@@ -35,7 +35,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
               {personalInfo.name}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
@@ -46,7 +46,7 @@ export default function Footer() {
                 href={personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 rounded-lg transition-colors"
+                className="p-2 bg-gray-100 dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-blue-900 transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -55,14 +55,14 @@ export default function Footer() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-200 dark:bg-gray-800 hover:bg-blue-600 hover:text-white rounded-lg transition-colors"
+                className="p-2 bg-gray-100 dark:bg-gray-900 hover:bg-blue-600 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="p-2 bg-gray-200 dark:bg-gray-800 hover:bg-purple-600 hover:text-white rounded-lg transition-colors"
+                className="p-2 bg-gray-100 dark:bg-gray-900 hover:bg-blue-600 hover:text-white transition-colors"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5" />
@@ -71,7 +71,7 @@ export default function Footer() {
                 href={personalInfo.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-gray-200 dark:bg-gray-800 hover:bg-green-600 hover:text-white rounded-lg transition-colors"
+                className="p-2 bg-gray-100 dark:bg-gray-900 hover:bg-blue-600 hover:text-white transition-colors"
                 aria-label="Website"
               >
                 <Globe className="w-5 h-5" />
@@ -185,7 +185,7 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-gray-200 dark:border-gray-800"
+          className="pt-8 border-t border-gray-200 dark:border-blue-900"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">
@@ -205,7 +205,7 @@ export default function Footer() {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0 }}
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all z-50"
+          className="fixed bottom-8 right-8 p-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-110 transition-all z-50"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-6 h-6" />

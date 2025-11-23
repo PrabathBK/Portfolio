@@ -51,7 +51,7 @@ export default function AnimatedBackground() {
 
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = `rgba(96, 165, 250, ${this.opacity})`;
+        ctx.fillStyle = `rgba(37, 99, 235, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -82,7 +82,7 @@ export default function AnimatedBackground() {
           const distance = Math.sqrt(dx * dx + dy * dy);
 
           if (distance < 120) {
-            ctx.strokeStyle = `rgba(96, 165, 250, ${0.15 * (1 - distance / 120)})`;
+            ctx.strokeStyle = `rgba(37, 99, 235, ${0.15 * (1 - distance / 120)})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -112,7 +112,7 @@ export default function AnimatedBackground() {
       {/* Gradient orbs */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
         <motion.div
-          className="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10"
+          className="absolute top-0 -left-4 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10"
           animate={{
             x: [0, 100, 0],
             y: [0, 50, 0],
@@ -136,7 +136,7 @@ export default function AnimatedBackground() {
           }}
         />
         <motion.div
-          className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10"
+          className="absolute -bottom-8 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 dark:opacity-10"
           animate={{
             x: [0, -50, 0],
             y: [0, -50, 0],
