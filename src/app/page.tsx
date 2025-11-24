@@ -3,9 +3,10 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Github, Linkedin, Mail, Award, Briefcase, Newspaper, MapPin } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Mail, Award, Briefcase, Newspaper } from 'lucide-react';
 import { featuredProjects } from '@/data/projects';
 import { personalInfo, awards, experience, news } from '@/data/cv';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,7 +26,7 @@ const itemVariants = {
     y: 0,
     scale: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 100,
       damping: 20,
       mass: 1
@@ -41,51 +42,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/30 dark:from-black dark:via-blue-950/30 dark:to-blue-900/20 relative overflow-hidden">
-      {/* Professional Background Animation - Subtle Gradient Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute w-[500px] h-[500px] rounded-full bg-blue-400/10 dark:bg-blue-500/10 blur-[100px]"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.1, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          style={{ top: '-10%', left: '-10%' }}
-        />
-        <motion.div
-          className="absolute w-[600px] h-[600px] rounded-full bg-purple-400/10 dark:bg-purple-500/10 blur-[120px]"
-          animate={{
-            x: [0, -80, 0],
-            y: [0, 60, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          style={{ top: '40%', right: '-20%' }}
-        />
-        <motion.div
-          className="absolute w-[400px] h-[400px] rounded-full bg-blue-400/10 dark:bg-blue-600/20 blur-[80px]"
-          animate={{
-            x: [0, 60, 0],
-            y: [0, -80, 0],
-            scale: [1, 1.15, 1],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          style={{ bottom: '-10%', left: '20%' }}
-        />
-      </div>
+      <AnimatedBackground />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <motion.div
@@ -115,7 +72,7 @@ export default function Home() {
               </div>
               <div className="flex-1 flex flex-col justify-between text-center md:text-left">
                 <div>
-                  <motion.h1 
+                  <motion.h1
                     className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -123,7 +80,7 @@ export default function Home() {
                   >
                     {personalInfo.name}
                   </motion.h1>
-                  <motion.p 
+                  <motion.p
                     className="text-xl text-blue-600 dark:text-blue-400 mb-4 font-medium"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -131,7 +88,7 @@ export default function Home() {
                   >
                     {personalInfo.title}
                   </motion.p>
-                  <motion.p 
+                  <motion.p
                     className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -139,7 +96,7 @@ export default function Home() {
                   >
                     {personalInfo.summary}
                   </motion.p>
-                  <motion.div 
+                  <motion.div
                     className="flex flex-wrap gap-2 justify-center md:justify-start mb-6"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -325,8 +282,8 @@ export default function Home() {
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">Get in touch</h3>
               <div className="h-px flex-1 bg-gray-100 dark:bg-gray-800 ml-4" />
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {/* Email Card */}
               <a
                 href={`mailto:${personalInfo.email}`}
@@ -335,9 +292,9 @@ export default function Home() {
                 <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                   <Mail className="w-5 h-5" />
                 </div>
-                <div className="overflow-hidden">
+                <div>
                   <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Email</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{personalInfo.email}</p>
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white break-all">{personalInfo.email}</p>
                 </div>
               </a>
 
@@ -351,9 +308,9 @@ export default function Home() {
                 <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white group-hover:scale-110 transition-transform">
                   <Github className="w-5 h-5" />
                 </div>
-                <div className="overflow-hidden">
+                <div>
                   <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">GitHub</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">@{personalInfo.github.split('/').pop()}</p>
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">@{personalInfo.github.split('/').pop()}</p>
                 </div>
               </a>
 
@@ -367,22 +324,11 @@ export default function Home() {
                 <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-blue-700 dark:text-blue-400 group-hover:scale-110 transition-transform">
                   <Linkedin className="w-5 h-5" />
                 </div>
-                <div className="overflow-hidden">
+                <div>
                   <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">LinkedIn</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">Connect</p>
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">Connect</p>
                 </div>
               </a>
-
-              {/* Location Card */}
-              <div className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group">
-                <div className="p-2 bg-green-50 dark:bg-green-900/20 rounded-lg text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div className="overflow-hidden">
-                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Location</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{personalInfo.location}</p>
-                </div>
-              </div>
             </div>
           </motion.div>
         </motion.div>
