@@ -30,7 +30,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white dark:bg-black border-b border-gray-300 dark:border-blue-900">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-black/70 border-b border-gray-200/50 dark:border-blue-900/30 supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo/Name */}
@@ -46,11 +46,10 @@ export default function Navbar() {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  pathname === item.path
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${pathname === item.path
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -86,11 +85,10 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  pathname === item.path
+                className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${pathname === item.path
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>

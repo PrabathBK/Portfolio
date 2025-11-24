@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Github, ExternalLink, Play, Calendar, Tag, Award, Sparkles } from 'lucide-react';
 import { projects } from '@/data/projects';
 import { use } from 'react';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -17,8 +18,9 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-900 dark:to-blue-950/30 py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/30 dark:from-black dark:via-blue-950/30 dark:to-blue-900/20 relative overflow-hidden py-12">
+      <AnimatedBackground />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Back Button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
