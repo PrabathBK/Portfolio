@@ -6,6 +6,7 @@ import { Calendar, ExternalLink, Tag, ArrowRight, Sparkles } from 'lucide-react'
 import { news } from '@/data/cv';
 import Image from 'next/image';
 import { useState } from 'react';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,14 +32,15 @@ const itemVariants = {
 export default function NewsPage() {
   const [filter, setFilter] = useState<string>('All');
   const categories = ['All', ...Array.from(new Set(news.map((item) => item.category)))];
-  
-  const filteredNews = filter === 'All' 
-    ? news 
+
+  const filteredNews = filter === 'All'
+    ? news
     : news.filter((item) => item.category === filter);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/30 dark:from-black dark:via-blue-950/30 dark:to-blue-900/20 relative overflow-hidden py-12">
+      <AnimatedBackground />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -54,7 +56,7 @@ export default function NewsPage() {
             <Sparkles className="w-4 h-4" />
             <span className="text-sm font-medium">Latest Updates</span>
           </motion.div>
-          
+
           <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
             News & Updates
           </h1>
@@ -74,11 +76,10 @@ export default function NewsPage() {
             <button
               key={category}
               onClick={() => setFilter(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                filter === category
+              className={`px-6 py-2 rounded-full font-medium transition-all ${filter === category
                   ? 'bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg scale-105'
                   : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:shadow-md hover:scale-105 border border-gray-300 dark:border-blue-900'
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -140,7 +141,7 @@ export default function NewsPage() {
               >
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 animate-ping opacity-75" />
               </motion.div>
-              
+
               <Link href={`/news/${item.id}`} className="block group">
                 <div className="bg-white dark:bg-gray-900 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-gray-300 dark:border-blue-900 hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
                   <div className="flex flex-col md:flex-row">
@@ -155,7 +156,7 @@ export default function NewsPage() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                       </div>
                     )}
-                    
+
                     <div className="flex-1 p-8">
                       <div className="flex flex-wrap items-center gap-3 mb-4">
                         <span className="px-4 py-1.5 bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm font-medium rounded-full">
@@ -180,7 +181,7 @@ export default function NewsPage() {
                           <span>Read full story</span>
                           <ArrowRight className="w-5 h-5" />
                         </span>
-                        
+
                         {item.link && (
                           <button
                             onClick={(e) => {

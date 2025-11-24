@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Github, ExternalLink, Calendar, Tag } from 'lucide-react';
 import { projects } from '@/data/projects';
 import type { ProjectCategory } from '@/data/types';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const categories: (ProjectCategory | 'All')[] = ['All', 'FPGA/RTL', 'IoT/Embedded', 'Software', 'AI/ML'];
 
@@ -56,8 +57,9 @@ export default function ProjectsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/30 dark:from-black dark:via-blue-950/30 dark:to-blue-900/20 relative overflow-hidden py-12">
+      <AnimatedBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -84,11 +86,10 @@ export default function ProjectsPage() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
-                  selectedCategory === category
+                className={`px-6 py-2 rounded-full font-medium transition-all ${selectedCategory === category
                     ? 'bg-blue-600 text-white shadow-lg scale-105'
                     : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800'
-                }`}
+                  }`}
               >
                 {category}
               </button>

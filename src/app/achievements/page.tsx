@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Award, Calendar, ExternalLink, Trophy, Star, Medal, ArrowRight } from 'lucide-react';
 import { awards } from '@/data/cv';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -66,8 +67,9 @@ export default function AchievementsPage() {
   const runnersUpCount = awards.filter(a => a.title.toLowerCase().includes('runners-up')).length;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/30 dark:from-black dark:via-blue-950/30 dark:to-blue-900/20 relative overflow-hidden py-12">
+      <AnimatedBackground />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -166,7 +168,7 @@ export default function AchievementsPage() {
         >
           {awards.map((award, index) => {
             const colors = categoryColors[award.category] || categoryColors['FPGA/Design'];
-            
+
             return (
               <motion.div
                 key={award.id}
@@ -186,7 +188,7 @@ export default function AchievementsPage() {
                           className="object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0" />
-                        
+
                         {/* Category Badge on Image */}
                         <div className="absolute top-4 right-4">
                           <span className={`px-4 py-2 ${colors.bg} backdrop-blur-sm ${colors.text} text-sm font-medium rounded-full shadow-lg`}>
@@ -246,7 +248,7 @@ export default function AchievementsPage() {
                             </p>
                           </div>
                         </div>
-                        
+
                         <ArrowRight className={`w-5 h-5 ${colors.icon} group-hover:translate-x-1 transition-transform`} />
                       </div>
                     </div>
