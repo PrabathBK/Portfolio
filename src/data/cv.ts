@@ -424,5 +424,13 @@ export const references: Reference[] = [
     organization: 'University of Moratuwa, Moratuwa, Sri Lanka',
     email: 'pasqual@uom.lk',
     phone: '+94(0)777413099'
+  },
+  {
+    name: 'Nuwantha Silva',
+    credentials: 'B.Sc. Eng. (Moratuwa, Sri Lanka)',
+    title: 'Associate Tech Lead',
+    organization: 'London Stock Exchange Group',
+    email: 'hnuwanthagayan@gmail.com',
+    phone: '+94(0)779213449'
   }
 ];
