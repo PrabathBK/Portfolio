@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Github, Linkedin, Mail, Globe, Heart, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, Facebook, Instagram, Heart, ArrowUp } from 'lucide-react';
 import { personalInfo } from '@/data/cv';
 import { useState, useEffect } from 'react';
 
@@ -67,15 +67,28 @@ export default function Footer() {
               >
                 <Mail className="w-5 h-5" />
               </a>
-              <a
-                href={personalInfo.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-100 dark:bg-gray-900 hover:bg-blue-600 hover:text-white transition-colors"
-                aria-label="Website"
-              >
-                <Globe className="w-5 h-5" />
-              </a>
+              {personalInfo.facebook && (
+                <a
+                  href={personalInfo.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-100 dark:bg-gray-900 hover:bg-blue-600 hover:text-white transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="w-5 h-5" />
+                </a>
+              )}
+              {personalInfo.instagram && (
+                <a
+                  href={personalInfo.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-100 dark:bg-gray-900 hover:bg-pink-600 hover:text-white transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="w-5 h-5" />
+                </a>
+              )}
             </div>
           </motion.div>
 
@@ -175,6 +188,32 @@ export default function Footer() {
                   LinkedIn Profile
                 </a>
               </li>
+              {personalInfo.facebook && (
+                <li className="flex items-start gap-2">
+                  <Facebook className="w-5 h-5 text-blue-600 dark:text-blue-400 flex-shrink-0 mt-0.5" />
+                  <a
+                    href={personalInfo.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >
+                    Facebook Profile
+                  </a>
+                </li>
+              )}
+              {personalInfo.instagram && (
+                <li className="flex items-start gap-2">
+                  <Instagram className="w-5 h-5 text-pink-600 dark:text-pink-400 flex-shrink-0 mt-0.5" />
+                  <a
+                    href={personalInfo.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors"
+                  >
+                    Instagram Profile
+                  </a>
+                </li>
+              )}
             </ul>
           </motion.div>
         </div>

@@ -78,6 +78,8 @@ export interface PersonalInfo {
   website: string;
   github: string;
   linkedin: string;
+  facebook?: string;
+  instagram?: string;
   summary: string;
   interests: string[];
   profileImage: string;

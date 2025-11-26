@@ -9,6 +9,8 @@ export const personalInfo: PersonalInfo = {
   website: 'https://prabathbk.github.io',
   github: 'https://github.com/PrabathBK',
   linkedin: 'https://www.linkedin.com/in/prabath-wijethilaka-4950b220b/',
+  facebook: 'https://www.facebook.com/share/1BgzRX6GWA/',
+  instagram: 'https://www.instagram.com/prabath_wije50?igsh=dWlubWdyODFlM3hj',
   summary: 'I am Prabath Wijethilaka, a Final Year undergraduate student in Electronic and Telecommunication Engineering at the University of Moratuwa, skilled in digital electronics and communications.',
   interests: [
     'FPGA Hardware Accelerated Systems',
