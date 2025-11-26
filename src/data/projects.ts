@@ -149,7 +149,7 @@ Implemented split-transaction handling with full verification using module-level
     description: `Developed a high-performance C++ order matching engine implementing price–time priority, in-memory order books, and full order validation across multiple instruments.
 
 Designed the C++ backend architecture including matching logic, execution state handling, and CSV-based batch processing with test coverage.`,
-    images: [],
+    images: ['/img/Projects/C++/1.png', '/img/Projects/C++/2.png'],
     githubLink: 'https://github.com/PrabathBK/Flower_exchanger.git',
     featured: false,
     importance: 2,
@@ -267,7 +267,7 @@ Our achievements include the successful transmission and reception of diverse da
 • Real-time audio
 
 Features BPSK modulation, FEC, NBFM, and symmetric key encryption for secure communication.`,
-    images: ['/img/cdp1.jpeg', '/img/cdp2.jpeg', '/img/cdp3.jpeg'],
+    images: ['/img/cdp3.jpeg', '/img/cdp2.jpeg', '/img/cdp1.jpeg'],
     githubLink: 'https://github.com/PrabathBK/Communication-Design-Project',
     featured: false,
     importance: 4,

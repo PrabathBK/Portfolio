@@ -85,7 +85,7 @@ export const awards: Award[] = [
       'Built a framework capable of running the full Qwen3 inference pipeline on bare metal',
       'Demonstrated strong hardware–software co-design skills while competing against top university and industry teams'
     ],
-    image: '/img/DVCON.jpg'
+    image: '/img/Projects/SLM/1.JPG'
   },
   {
     id: 'sliot-2023',
@@ -100,7 +100,7 @@ export const awards: Award[] = [
       'Developed a complete IoT solution from concept to deployment',
       'Launched official website: www.hydrolink.lk'
     ],
-    image: '/img/hydrolink1.jpg'
+    image: '/img/hydrolink2.jpeg'
   },
   {
     id: 'ieee-circuit-2024',
@@ -114,7 +114,7 @@ export const awards: Award[] = [
       'Developed wearable EOG-based drowsiness detection system',
       'Integrated machine learning for real-time driver monitoring'
     ],
-    image: '/img/Steersafe1.png'
+    image: '/img/Projects/steersafe/3.png'
   },
   {
     id: 'brainstorm-2024',
@@ -127,7 +127,8 @@ export const awards: Award[] = [
       '1st Runners-up at Brainstorm 2024',
       'Healthcare innovation focused on driver safety',
       'EOG-based attention monitoring system'
-    ]
+    ],
+    image: '/img/Achievments/brainstrom.png'
   },
   {
     id: 'dvcon-2024',
@@ -140,7 +141,8 @@ export const awards: Award[] = [
       'Reached Stage 2 (Top 20) in international competition',
       'Designed hardware accelerator for ViT-based malware detection',
       'Competed with team GateMasters'
-    ]
+    ],
+    image: '/img/Achievments/dvcon2024.png'
   },
   {
     id: 'hackx-2024',
@@ -153,7 +155,21 @@ export const awards: Award[] = [
       'Finalist in inter-university startup challenge',
       'Pitched Hydrolink IoT solution to investors',
       'Demonstrated business viability and market potential'
-    ]
+    ],
+    image: '/img/Achievments/hackx.jpeg'
+  },
+  {
+    id: 'slug-2023',
+    title: 'Sri Lanka University Games Championship 2023',
+    organization: 'Sri Lanka University Games (SLUG)',
+    date: '2023',
+    category: 'Sports',
+    description: 'Championship title at the Sri Lanka University Games 2023.',
+    details: [
+      'Sri Lanka University Games Championship 2023',
+      'University Baseball Team - University of Moratuwa'
+    ],
+    image: '/img/Achievments/SLUG.jpeg'
   },
   {
     id: 'deans-list',
