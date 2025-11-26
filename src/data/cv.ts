@@ -255,7 +255,7 @@ export const news: News[] = [
     description: 'Our project "SLMs on Edge" secured 1st Runners-Up position at the DVCon India 2025 Design Contest, competing against top university and industry teams.',
     category: 'Achievement',
     link: 'https://www.linkedin.com/posts/dvcon-india_dvconindia2025-activity-7371561431197986816-c_HJ',
-    image: '/img/DVCON.jpg'
+    image: '/img/Projects/SLM/1.JPG'
   },
   {
     id: 'lseg-internship',
@@ -265,12 +265,19 @@ export const news: News[] = [
     category: 'Career'
   },
   {
-    id: 'sliot-champion',
-    title: 'Champions at SLIoT Challenge 2023',
-    date: '2023',
-    description: 'Project Hydrolink won the SLIoT Challenge 2023 and received funding from the World Bank for pilot production.',
+    id: 'hackx-finalist',
+    title: 'Finalist at HackX 2024',
+    date: '2024',
+    description: 'Hydrolink was selected as a finalist in the HackX 2024 Inter-University Startup Challenge, pitching our IoT solution to industry investors.',
     category: 'Achievement',
-    image: '/img/hydrolink1.jpg'
+    image: '/img/Achievments/hackx.jpeg'
+  },
+  {
+    id: 'head-marketing',
+    title: 'Appointed Head of Marketing',
+    date: 'August 2024',
+    description: 'Took on the role of Head of Marketing for the Electronic Club at the University of Moratuwa, leading strategic initiatives and event promotion.',
+    category: 'Career'
   },
   {
     id: 'ieee-circuit-champion',
@@ -278,7 +285,38 @@ export const news: News[] = [
     date: '2024',
     description: 'Steer-Safe project won the IEEE Sri Lanka Circuit Challenge 2024 for innovative drowsiness detection system.',
     category: 'Achievement',
-    image: '/img/Steersafe1.png'
+    image: '/img/Projects/steersafe/3.png'
+  },
+  {
+    id: 'dvcon-2024-stage2',
+    title: 'Top 20 at DVCon India 2024',
+    date: '2024',
+    description: 'Team GateMasters reached Stage 2 (Top 20) in the International Design Contest with our hardware accelerator for malware detection.',
+    category: 'Achievement',
+    image: '/img/Achievments/dvcon2024.png'
+  },
+  {
+    id: 'slug-2023',
+    title: 'SLUG 2023 Baseball Champions',
+    date: '2023',
+    description: 'University of Moratuwa Baseball Team clinched the Championship title at the Sri Lanka University Games 2023.',
+    category: 'Achievement',
+    image: '/img/Achievments/SLUG.jpeg'
+  },
+  {
+    id: 'sliot-champion',
+    title: 'Champions at SLIoT Challenge 2023',
+    date: '2023',
+    description: 'Project Hydrolink won the SLIoT Challenge 2023 and received funding from the World Bank for pilot production.',
+    category: 'Achievement',
+    image: '/img/hydrolink2.jpeg'
+  },
+  {
+    id: 'deans-list',
+    title: 'Dean\'s List Recognition',
+    date: '2023',
+    description: 'Recognized on the Dean\'s List for academic excellence in Semester 2 and Semester 6.',
+    category: 'Academic'
   }
 ];
 

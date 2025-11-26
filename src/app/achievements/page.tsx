@@ -107,8 +107,8 @@ export default function AchievementsPage() {
             className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
-            <Trophy className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+            <Trophy className="w-12 h-12 text-blue-600 dark:text-white mx-auto mb-3" />
+            <div className="text-4xl font-bold text-blue-600 dark:text-white mb-2">
               {awards.length}
             </div>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -121,8 +121,8 @@ export default function AchievementsPage() {
             className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
-            <Medal className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+            <Medal className="w-12 h-12 text-blue-600 dark:text-white mx-auto mb-3" />
+            <div className="text-4xl font-bold text-blue-600 dark:text-white mb-2">
               {championshipsCount}
             </div>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -135,8 +135,8 @@ export default function AchievementsPage() {
             className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
-            <Star className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3 fill-blue-600 dark:fill-blue-400" />
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+            <Star className="w-12 h-12 text-blue-600 dark:text-white mx-auto mb-3 fill-blue-600 dark:fill-white" />
+            <div className="text-4xl font-bold text-blue-600 dark:text-white mb-2">
               {runnersUpCount}
             </div>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-400">
@@ -149,8 +149,8 @@ export default function AchievementsPage() {
             className="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl border border-gray-300 dark:border-blue-900 text-center relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full -mr-16 -mt-16" />
-            <Award className="w-12 h-12 text-blue-600 dark:text-blue-400 mx-auto mb-3" />
-            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+            <Award className="w-12 h-12 text-blue-600 dark:text-white mx-auto mb-3" />
+            <div className="text-4xl font-bold text-blue-600 dark:text-white mb-2">
               International
             </div>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-400">

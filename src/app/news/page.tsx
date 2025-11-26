@@ -77,8 +77,8 @@ export default function NewsPage() {
               key={category}
               onClick={() => setFilter(category)}
               className={`px-6 py-2 rounded-full font-medium transition-all ${filter === category
-                  ? 'bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg scale-105'
-                  : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:shadow-md hover:scale-105 border border-gray-300 dark:border-blue-900'
+                ? 'bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg scale-105'
+                : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:shadow-md hover:scale-105 border border-gray-300 dark:border-blue-900'
                 }`}
             >
               {category}
@@ -94,26 +94,26 @@ export default function NewsPage() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
         >
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-2">
+            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent dark:text-white dark:bg-none mb-2">
               {news.length}
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Total News</div>
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 text-center">
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-2">
+            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent dark:text-white dark:bg-none mb-2">
               {news.filter(n => n.category === 'Achievement').length}
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Achievements</div>
           </div>
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-blue-900 text-center">
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-2">
+            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent dark:text-white dark:bg-none mb-2">
               {news.filter(n => n.category === 'Career').length}
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Career Updates</div>
           </div>
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-blue-900 text-center">
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent mb-2">
-              2024-25
+            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent dark:text-white dark:bg-none mb-2">
+              2023-25
             </div>
             <div className="text-sm text-gray-600 dark:text-gray-400">Active Year</div>
           </div>
