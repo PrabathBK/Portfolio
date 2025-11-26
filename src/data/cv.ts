@@ -14,8 +14,8 @@ export const personalInfo: PersonalInfo = {
     'FPGA Hardware Accelerated Systems',
     'Computer Architecture',
     'Embedded Systems',
+    'Full Stack Development',
     'AI & ML',
-    'Full Stack Developing',
     'Entrepreneurship',
     'Sports and Outdoor Activities'
   ],

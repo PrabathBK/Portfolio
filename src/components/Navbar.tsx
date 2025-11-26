@@ -11,8 +11,9 @@ const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Projects', path: '/projects' },
   { name: 'CV', path: '/cv' },
-  { name: 'News', path: '/news' },
   { name: 'Achievements', path: '/achievements' },
+  { name: 'News', path: '/news' },
+
 ];
 
 export default function Navbar() {
@@ -47,8 +48,8 @@ export default function Navbar() {
                 key={item.path}
                 href={item.path}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${pathname === item.path
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900'
                   }`}
               >
                 {item.name}
@@ -86,8 +87,8 @@ export default function Navbar() {
                 href={item.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${pathname === item.path
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900'
+                  ? 'bg-blue-600 text-white'
+                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-900'
                   }`}
               >
                 {item.name}

@@ -51,29 +51,73 @@ export default function Home() {
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-auto"
         >
-          {/* Large Tile - Hero/Introduction */}
+          {/* Main Profile Card - Consolidated */}
           <motion.div
             variants={itemVariants}
             whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.1)" }}
-            className="md:col-span-2 lg:row-span-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg border border-white/20 dark:border-white/10"
+            className="md:col-span-2 lg:row-span-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg border border-white/20 dark:border-white/10 flex flex-col justify-between"
           >
-            <div className="flex flex-col md:flex-row gap-8 h-full items-center md:items-start">
-              <div className="flex-shrink-0 relative group">
-                <div className="absolute inset-0 bg-blue-500 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
-                <div className="relative w-48 h-48 rounded-2xl overflow-hidden ring-4 ring-white dark:ring-gray-800 shadow-xl transform transition-transform duration-500 group-hover:scale-[1.02]">
-                  <Image
-                    src={personalInfo.profileImage}
-                    alt={personalInfo.name}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+            <div className="flex flex-col md:flex-row gap-8 items-center md:items-start h-full">
+              {/* Left Column: Profile Pic & CV Button */}
+              <div className="flex-shrink-0 flex flex-col items-center gap-6">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-blue-500 rounded-2xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity duration-500" />
+                  <div className="relative w-48 h-48 rounded-2xl overflow-hidden ring-4 ring-white dark:ring-gray-800 shadow-xl transform transition-transform duration-500 group-hover:scale-[1.02]">
+                    <Image
+                      src={personalInfo.profileImage}
+                      alt={personalInfo.name}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                </div>
+
+                <Link
+                  href="/cv"
+                  className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all group mb-6"
+                >
+                  <span>View My CV</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+
+                {/* Contact Icons */}
+                <div className="flex items-center justify-center gap-4 w-full">
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="p-3 bg-gray-50 dark:bg-gray-800/50 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all shadow-sm"
+                    aria-label="Email"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+
+                  <a
+                    href={personalInfo.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-50 dark:bg-gray-800/50 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all shadow-sm"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+
+                  <a
+                    href={personalInfo.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gray-50 dark:bg-gray-800/50 text-gray-600 dark:text-gray-400 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all shadow-sm"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
                 </div>
               </div>
-              <div className="flex-1 flex flex-col justify-between text-center md:text-left">
+
+              {/* Right Column: Info & Details */}
+              <div className="flex-1 flex flex-col text-center md:text-left h-full">
                 <div>
                   <motion.h1
-                    className="text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+                    className="text-4xl md:text-5xl font-bold mb-2 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
@@ -88,6 +132,18 @@ export default function Home() {
                   >
                     {personalInfo.title}
                   </motion.p>
+
+                  {/* Current Role - Integrated */}
+                  <motion.div
+                    className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 rounded-lg text-sm font-medium border border-emerald-100 dark:border-emerald-900/50 mx-auto md:mx-0"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.45 }}
+                  >
+                    <Briefcase className="w-4 h-4" />
+                    <span>{currentRole.title} @ {currentRole.organization}</span>
+                  </motion.div>
+
                   <motion.p
                     className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
@@ -96,13 +152,14 @@ export default function Home() {
                   >
                     {personalInfo.summary}
                   </motion.p>
+
                   <motion.div
-                    className="flex flex-wrap gap-2 justify-center md:justify-start mb-6"
+                    className="flex flex-wrap gap-2 justify-center md:justify-start mb-8"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.6 }}
                   >
-                    {personalInfo.interests.slice(0, 4).map((interest, index) => (
+                    {personalInfo.interests.slice(0, 5).map((interest) => (
                       <span
                         key={interest}
                         className="px-4 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium border border-gray-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:border-blue-200 dark:hover:border-blue-800 transition-colors cursor-default"
@@ -189,40 +246,11 @@ export default function Home() {
             </Link>
           </motion.div>
 
-          {/* Current Role Tile */}
+          {/* Latest News Tile - Spans 2 Columns */}
           <motion.div
             variants={itemVariants}
             whileHover={{ y: -5 }}
-            className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all duration-300 group"
-          >
-            <div className="flex flex-col h-full">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2.5 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-300">
-                  <Briefcase className="w-5 h-5" />
-                </div>
-                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
-                  Current Role
-                </span>
-              </div>
-              <h3 className="text-lg font-bold mb-1 text-gray-900 dark:text-white">
-                {currentRole.title}
-              </h3>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium text-sm mb-3">
-                {currentRole.organization}
-              </p>
-              <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800">
-                <p className="text-xs font-medium text-gray-400">
-                  {currentRole.startDate} - {currentRole.endDate}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Latest News Tile */}
-          <motion.div
-            variants={itemVariants}
-            whileHover={{ y: -5 }}
-            className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+            className="md:col-span-2 bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all duration-300 group cursor-pointer"
           >
             <Link href={`/news/${latestNews.id}`} className="block h-full">
               <div className="flex flex-col h-full">
@@ -247,89 +275,6 @@ export default function Home() {
                 </div>
               </div>
             </Link>
-          </motion.div>
-
-          {/* CV Quick Link */}
-          <motion.div
-            variants={itemVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
-            className="bg-blue-600 dark:bg-blue-700 rounded-3xl p-6 shadow-lg text-white group cursor-pointer relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none" />
-            <Link href="/cv" className="block h-full relative z-10">
-              <div className="flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">
-                    View My CV
-                  </h3>
-                  <p className="text-blue-100 text-sm line-clamp-2">
-                    Explore my full professional journey
-                  </p>
-                </div>
-                <div className="flex items-center gap-2 text-sm font-semibold mt-4">
-                  Open CV <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-          </motion.div>
-
-          {/* Contact Details - Compact Row */}
-          <motion.div
-            variants={itemVariants}
-            className="md:col-span-2 bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-200 dark:border-gray-800"
-          >
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">Get in touch</h3>
-              <div className="h-px flex-1 bg-gray-100 dark:bg-gray-800 ml-4" />
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Email Card */}
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
-              >
-                <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
-                  <Mail className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">Email</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white break-all">{personalInfo.email}</p>
-                </div>
-              </a>
-
-              {/* GitHub Card */}
-              <a
-                href={personalInfo.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
-              >
-                <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white group-hover:scale-110 transition-transform">
-                  <Github className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">GitHub</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white">@{personalInfo.github.split('/').pop()}</p>
-                </div>
-              </a>
-
-              {/* LinkedIn Card */}
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group"
-              >
-                <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded-lg text-blue-700 dark:text-blue-400 group-hover:scale-110 transition-transform">
-                  <Linkedin className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wide">LinkedIn</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white">Connect</p>
-                </div>
-              </a>
-            </div>
           </motion.div>
         </motion.div>
       </div>
