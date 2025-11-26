@@ -9,7 +9,7 @@ import { projects } from '@/data/projects';
 import type { ProjectCategory } from '@/data/types';
 import AnimatedBackground from '@/components/AnimatedBackground';
 
-const categories: (ProjectCategory | 'All')[] = ['All', 'FPGA/RTL', 'IoT/Embedded', 'Software', 'AI/ML'];
+const categories: (ProjectCategory | 'All')[] = ['All', 'FPGA/RTL', 'IoT/Embedded', 'Software', 'AI/ML', 'Robotics', 'Telecommunication'];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -87,8 +87,8 @@ export default function ProjectsPage() {
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full font-medium transition-all ${selectedCategory === category
-                    ? 'bg-blue-600 text-white shadow-lg scale-105'
-                    : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800'
+                  ? 'bg-blue-600 text-white shadow-lg scale-105'
+                  : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800'
                   }`}
               >
                 {category}

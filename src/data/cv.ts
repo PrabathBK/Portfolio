@@ -428,9 +428,9 @@ export const references: Reference[] = [
   {
     name: 'Nuwantha Silva',
     credentials: 'B.Sc. Eng. (Moratuwa, Sri Lanka)',
-    title: 'Associate Tech Lead',
+    title: 'Assoc. Tech Lead',
     organization: 'London Stock Exchange Group',
-    email: 'hnuwanthagayan@gmail.com',
+    email: 'nuwantha.silva@lseg.com',
     phone: '+94(0)779213449'
   }
 ];

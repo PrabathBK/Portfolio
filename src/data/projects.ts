@@ -12,7 +12,7 @@ export const projects: Project[] = [
 Built a full bare-metal runtime capable of executing the entire Qwen3 pipeline, including custom memory allocation, tiling schedule generation, AXI-based data movement, and CPU–FPGA synchronization for deterministic sequential inference.
 
 Developed a lightweight systolic array accelerator featuring INT8 GEMM, 16×16 tiled architecture, double buffering, AXI4/AXI-Lite integration, and optimized DMA dataflow - delivering high-throughput GEMM execution on edge hardware.`,
-    images: ['/img/DVCON.jpg'],
+    images: ['/img/Projects/SLM/1.JPG', '/img/Projects/SLM/IP_design.png', '/img/Projects/SLM/Inferer_eng.png', '/img/Projects/SLM/System_architect.png'],
     githubLink: 'https://github.com/PrabathBK/SLMs-on-Edge-Gemma_Accelerator_IP',
     featured: true,
     importance: 1,
@@ -29,7 +29,7 @@ Developed a lightweight systolic array accelerator featuring INT8 GEMM, 16×16 t
 Developed a custom 32-bit ISA, hierarchical memory system (PE register files + global buffers), and AXI4 DMA integration for seamless ARM–FPGA communication.
 
 Includes matrix-vector multiplier implementation with UART communication and AXI Stream interfaces.`,
-    images: ['/img/mvm1.png', '/img/mvm2.png', '/img/mvm3.png', '/img/mvm4.png'],
+    images: ['/img/Projects/CNN/1.jpeg'],
     githubLink: 'https://github.com/PrabathBK/Matrix_vector_mul_UART',
     featured: true,
     importance: 1,
@@ -158,7 +158,7 @@ Designed the C++ backend architecture including matching logic, execution state 
   {
     id: 'steer-safe',
     title: 'Steer-Safe - Drowsiness Detection System',
-    category: 'AI/ML',
+    category: 'IoT/Embedded',
     techStack: ['Machine Learning', 'EOG', 'Raspberry Pi', 'PCB Design', 'Embedded Systems'],
     summary: 'Championship at IEEE Circuit Challenge 2024 - Wearable driver awareness monitoring',
     description: `Developed a lightweight, eyewear-integrated driver safety device using embedded systems, communication protocols, and low-power firmware for real-time drowsiness and attention monitoring.
@@ -168,7 +168,8 @@ A wearable device that utilizes machine learning and Electrooculography (EOG) si
 Awards:
 • Championship - IEEE Sri Lanka Circuit Challenge 2024
 • 1st Runners-Up - Brainstorm 2024 Healthcare Innovation Competition`,
-    images: ['/img/Steersafe1.png', '/img/Steersafe2.png', '/img/Steersafe3.png'],
+    images: ['/img/Steersafe1.png', '/img/Steersafe2.png', '/img/Steersafe3.png', '/img/Projects/steersafe/1.jpeg', '/img/Projects/steersafe/2.jpeg'],
+
     githubLink: 'https://github.com/orgs/PulseX-Solutions/repositories',
     featured: false,
     importance: 2,
@@ -177,7 +178,7 @@ Awards:
   {
     id: 'ros2-gazebo',
     title: 'Gazebo Robot Simulation',
-    category: 'IoT/Embedded',
+    category: 'Robotics',
     techStack: ['ROS2 Humble', 'Gazebo', 'SLAM', 'Nav2', 'OpenCV', 'Ubuntu'],
     summary: 'Robot Simulation Project using ROS2 Humble and Gazebo with SLAM and object tracking',
     description: `Map a room and navigate the robot from one location to another, avoiding obstacles along the way. Additionally, perform object tracking.
@@ -255,7 +256,7 @@ Complete with custom PCB design and 3D-printed enclosure.`,
   {
     id: 'communication-design',
     title: 'Point-to-Point Communication Design Project',
-    category: 'IoT/Embedded',
+    category: 'Telecommunication',
     techStack: ['GNU Radio', 'MATLAB', 'BladeRF', 'SDR', 'BPSK', 'NBFM', 'Streamlit'],
     summary: 'Secure and reliable point-to-point digital wireless communication system using SDR',
     description: `Implemented a secure and reliable point-to-point digital wireless communication system using software-defined radios.
@@ -458,5 +459,5 @@ Features historical data analysis, trend prediction, and performance visualizati
 
 export const featuredProjects = projects.filter(p => p.featured);
 
-export const projectsByCategory = (category: string) => 
+export const projectsByCategory = (category: string) =>
   category === 'All' ? projects : projects.filter(p => p.category === category);

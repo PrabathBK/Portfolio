@@ -1,17 +1,36 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Github, ExternalLink, Play, Calendar, Tag, Award, Sparkles } from 'lucide-react';
+import { ArrowLeft, Github, ExternalLink, Play, Calendar, Tag, Award, Sparkles, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { projects } from '@/data/projects';
-import { use } from 'react';
+import { use, useState, useEffect, useCallback } from 'react';
 import AnimatedBackground from '@/components/AnimatedBackground';
 
 export default function ProjectDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const project = projects.find(p => p.id === id);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  const navigateImage = useCallback((direction: number) => {
+    if (selectedImageIndex === null || !project) return;
+    const newIndex = (selectedImageIndex + direction + project.images.length) % project.images.length;
+    setSelectedImageIndex(newIndex);
+  }, [selectedImageIndex, project]);
+
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (selectedImageIndex === null) return;
+    if (e.key === 'Escape') setSelectedImageIndex(null);
+    if (e.key === 'ArrowLeft') navigateImage(-1);
+    if (e.key === 'ArrowRight') navigateImage(1);
+  }, [selectedImageIndex, navigateImage]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleKeyDown]);
 
   if (!project) {
     notFound();
@@ -20,6 +39,70 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-blue-100/30 dark:from-black dark:via-blue-950/30 dark:to-blue-900/20 relative overflow-hidden py-12">
       <AnimatedBackground />
+
+      {/* Lightbox Overlay */}
+      <AnimatePresence>
+        {selectedImageIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl p-4 md:p-8"
+            onClick={() => setSelectedImageIndex(null)}
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedImageIndex(null)}
+              className="absolute top-4 right-4 p-2 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+            >
+              <X className="w-8 h-8" />
+            </button>
+
+            {/* Navigation Buttons */}
+            <button
+              onClick={(e) => { e.stopPropagation(); navigateImage(-1); }}
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50 hidden md:block"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); navigateImage(1); }}
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-3 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50 hidden md:block"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+
+            {/* Main Image */}
+            <div
+              className="relative w-full max-w-7xl h-full max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <motion.div
+                key={selectedImageIndex}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="relative w-full h-full"
+              >
+                <Image
+                  src={project.images[selectedImageIndex]}
+                  alt={`${project.title} - View ${selectedImageIndex + 1}`}
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
+
+              {/* Image Counter */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-4 py-2 bg-black/50 backdrop-blur-md rounded-full text-white text-sm font-medium">
+                {selectedImageIndex + 1} / {project.images.length}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Back Button */}
         <motion.div
@@ -140,16 +223,24 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: 0.3 + index * 0.1 }}
-                      whileHover={{ scale: 1.03 }}
-                      className="relative h-64 rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-700 shadow-lg group cursor-pointer"
+                      whileHover={{ scale: 1.02 }}
+                      onClick={() => setSelectedImageIndex(index)}
+                      className="relative h-80 rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-900/50 shadow-lg group cursor-pointer border border-gray-200 dark:border-gray-700"
                     >
                       <Image
                         src={image}
                         alt={`${project.title} - Image ${index + 1}`}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 bg-transparent" />
+
+                      {/* Hover Overlay with Zoom Icon */}
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <div className="p-3 bg-white/20 backdrop-blur-md rounded-full text-white">
+                          <ExternalLink className="w-6 h-6" />
+                        </div>
+                      </div>
                     </motion.div>
                   ))}
                 </div>

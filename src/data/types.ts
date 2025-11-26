@@ -1,6 +1,6 @@
 // Type definitions for portfolio data structures
 
-export type ProjectCategory = 'FPGA/RTL' | 'IoT/Embedded' | 'Software' | 'AI/ML' | 'Fun';
+export type ProjectCategory = 'FPGA/RTL' | 'IoT/Embedded' | 'Software' | 'AI/ML' | 'Robotics' | 'Telecommunication' | 'Fun';
 
 export interface Project {
   id: string;
