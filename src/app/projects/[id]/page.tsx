@@ -130,7 +130,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             {/* Badges */}
             <div className="flex flex-wrap items-center gap-3 mb-6">
               {project.featured && (
-                <span className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-sm font-bold rounded-full shadow-lg">
+                <span className="flex items-center gap-2 px-4 py-2 bg-yellow-500 text-white text-sm font-bold rounded-full shadow-lg">
                   <Award className="w-4 h-4" />
                   Featured Project
                 </span>
@@ -148,7 +148,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             </div>
 
             {/* Title & Summary */}
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-blue-600 dark:text-blue-400 leading-tight">
               {project.title}
             </h1>
 
@@ -178,7 +178,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow"
+                  className="flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <ExternalLink className="w-5 h-5" />
                   <span>Live Demo</span>
@@ -191,7 +191,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow"
+                  className="flex items-center gap-2 px-8 py-4 bg-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <Play className="w-5 h-5" />
                   <span>Watch Video</span>

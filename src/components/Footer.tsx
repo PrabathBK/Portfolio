@@ -191,9 +191,7 @@ export default function Footer() {
             <p className="text-gray-600 dark:text-gray-400 text-sm text-center md:text-left">
               © {currentYear} {personalInfo.name}. All rights reserved.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-1">
-              Built with <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" /> using Next.js & Tailwind CSS
-            </p>
+
           </div>
         </motion.div>
       </div>
