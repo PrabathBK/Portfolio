@@ -47,7 +47,7 @@ export default function AnimatedBackground() {
         this.size = Math.random() * 2 + 1;
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.5 + 0.3;
+        this.opacity = Math.random() * 0.6 + 0.6; // Increased opacity
       }
 
       update(width: number, height: number, mouseX: number, mouseY: number) {
@@ -90,52 +90,59 @@ export default function AnimatedBackground() {
 
     // Create particles
     const particles: Particle[] = [];
-    const particleCount = 100; // Increased density
+    const particleCount = 50; // Optimized count for better performance
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvas.width, canvas.height));
     }
 
     // Animation loop
     const animate = () => {
+      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      particles.forEach((particle) => {
-        particle.update(canvas.width, canvas.height, mouseRef.current.x, mouseRef.current.y);
-        particle.draw();
-      });
+      // Update and draw particles
+      for (let i = 0; i < particleCount; i++) {
+        particles[i].update(canvas.width, canvas.height, mouseRef.current.x, mouseRef.current.y);
+        particles[i].draw();
+      }
 
-      // Draw connections
-      particles.forEach((a, i) => {
+      // Draw connections - Optimized O(N^2) loop
+      ctx.lineWidth = 0.5;
+      for (let i = 0; i < particleCount; i++) {
+        const a = particles[i];
+
         // Connect to other particles
-        particles.slice(i + 1).forEach((b) => {
+        for (let j = i + 1; j < particleCount; j++) {
+          const b = particles[j];
           const dx = a.x - b.x;
           const dy = a.y - b.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+          // Optimization: Check squared distance first to avoid expensive sqrt
+          const distSq = dx * dx + dy * dy;
 
-          if (distance < 100) {
-            ctx.strokeStyle = `rgba(100, 149, 237, ${0.15 * (1 - distance / 100)})`;
-            ctx.lineWidth = 0.5;
+          if (distSq < 10000) { // 100 * 100
+            const distance = Math.sqrt(distSq);
+            ctx.strokeStyle = `rgba(100, 149, 237, ${0.25 * (1 - distance / 100)})`; // Increased line opacity
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
             ctx.stroke();
           }
-        });
+        }
 
         // Connect to mouse
         const dx = a.x - mouseRef.current.x;
         const dy = a.y - mouseRef.current.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+        const distSq = dx * dx + dy * dy;
 
-        if (distance < 150) {
-          ctx.strokeStyle = `rgba(100, 149, 237, ${0.2 * (1 - distance / 150)})`;
-          ctx.lineWidth = 0.8;
+        if (distSq < 22500) { // 150 * 150
+          const distance = Math.sqrt(distSq);
+          ctx.strokeStyle = `rgba(100, 149, 237, ${0.3 * (1 - distance / 150)})`; // Increased mouse line opacity
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(mouseRef.current.x, mouseRef.current.y);
           ctx.stroke();
         }
-      });
+      }
 
       requestAnimationFrame(animate);
     };
@@ -152,36 +159,18 @@ export default function AnimatedBackground() {
     <>
       <canvas
         ref={canvasRef}
-        className="fixed inset-0 pointer-events-none opacity-60 dark:opacity-40"
+        className="fixed inset-0 pointer-events-none opacity-80 dark:opacity-60"
         style={{ zIndex: 0 }}
       />
       {/* Subtle Gradient orbs - toned down */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
-        <motion.div
-          className="absolute top-0 -left-4 w-96 h-96 bg-blue-600/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10"
-          animate={{
-            x: [0, 100, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute top-0 right-4 w-96 h-96 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl opacity-20 dark:opacity-10"
-          animate={{
-            x: [0, -100, 0],
-            y: [0, 100, 0],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
+      {/* Optimized Background Gradient */}
+      <div
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          zIndex: 0,
+          background: 'radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.05) 0%, transparent 30%)'
+        }}
+      />
     </>
   );
 }

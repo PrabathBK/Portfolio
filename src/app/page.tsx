@@ -54,7 +54,7 @@ export default function Home() {
           {/* Main Profile Card - Consolidated */}
           <motion.div
             variants={itemVariants}
-            whileHover={{ y: -5, boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.1)" }}
+            whileHover={{ y: -2, boxShadow: "0 20px 40px -15px rgba(0, 0, 0, 0.1)" }}
             className="md:col-span-2 lg:row-span-2 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg border border-white/20 dark:border-white/10 flex flex-col justify-between"
           >
             <div className="flex flex-col md:flex-row gap-8 items-center md:items-start h-full">
@@ -69,6 +69,7 @@ export default function Home() {
                       fill
                       className="object-cover"
                       priority
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                   </div>
                 </div>
@@ -176,10 +177,10 @@ export default function Home() {
           {/* Featured Project Tile */}
           <motion.div
             variants={itemVariants}
-            whileHover={{ y: -5, scale: 1.02 }}
+            whileHover={{ y: -2, scale: 1.02 }}
             className="lg:row-span-2 bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-1 shadow-lg text-white group cursor-pointer overflow-hidden relative"
           >
-            <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20" />
+            <div className="absolute inset-0 bg-[url('/img/noise.svg')] opacity-20" />
             <div className="bg-gradient-to-br from-white/10 to-transparent p-6 h-full rounded-[20px] relative z-10 flex flex-col">
               <Link href={`/projects/${topProject.id}`} className="block h-full">
                 <div className="flex flex-col h-full">
@@ -218,7 +219,7 @@ export default function Home() {
           {/* Latest Achievement Tile */}
           <motion.div
             variants={itemVariants}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: -2 }}
             className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all duration-300 group cursor-pointer"
           >
             <Link href="/achievements" className="block h-full">
@@ -249,7 +250,7 @@ export default function Home() {
           {/* Latest News Tile - Spans 2 Columns */}
           <motion.div
             variants={itemVariants}
-            whileHover={{ y: -5 }}
+            whileHover={{ y: -2 }}
             className="md:col-span-2 bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-sm border border-gray-200 dark:border-gray-800 hover:shadow-xl transition-all duration-300 group cursor-pointer"
           >
             <Link href={`/news/${latestNews.id}`} className="block h-full">
