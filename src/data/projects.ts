@@ -2,6 +2,24 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
+    id: 'floodsupport-dashboard',
+    title: 'FloodSupport – Real-Time Disaster Analytics Dashboard',
+    category: 'Software',
+    techStack: ['Data Analytics', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel', 'REST API'],
+    summary: 'Real-time analytics dashboard for FloodSupport disaster relief initiative',
+    description: `Developed a real-time data analytics dashboard for the FloodSupport initiative, using the public SOS API to visualize live flood reports and volunteer responses.
+
+Implemented interactive charts and region-wise insights to support fast, data-driven decision-making during emergency relief operations.
+
+The dashboard provides critical situational awareness to disaster response coordinators, enabling efficient resource allocation during flood emergencies in Sri Lanka.`,
+    images: ["/img/flood1.png"],
+    githubLink: 'https://github.com/YasiruDEX/FloodSupport',
+    externalLink: 'https://stats.floodsupport.org',
+    featured: true,
+    importance: 1,
+    date: 'December 2025'
+  },
+  {
     id: 'slms-on-edge',
     title: 'SLMs on Edge - FPGA Accelerator for Qwen3 SLM Inference',
     category: 'FPGA/RTL',

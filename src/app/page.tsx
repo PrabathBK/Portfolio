@@ -35,7 +35,8 @@ const itemVariants = {
 };
 
 export default function Home() {
-  const topProject = featuredProjects[0];
+  // Display SLMs on Edge as the featured project on homepage
+  const topProject = featuredProjects.find(p => p.id === 'slms-on-edge') || featuredProjects[0];
   const latestAward = awards[0];
   const currentRole = experience[0];
   const latestNews = news[0];

@@ -251,6 +251,15 @@ export const skills: Skills = {
 
 export const news: News[] = [
   {
+    id: 'floodsupport-volunteer',
+    title: 'Volunteer Developer for FloodSupport Sri Lanka',
+    date: 'December 2025',
+    description: 'Developed a real-time disaster analytics dashboard for the FloodSupport initiative, providing interactive data visualization and region-wise insights to support emergency relief operations during the Sri Lanka floods.',
+    category: 'Volunteering',
+    link: 'https://stats.floodsupport.org',
+    image: '/img/flood1.png'
+  },
+  {
     id: 'dvcon-2025-award',
     title: 'Awarded 1st Runners-Up at DVCon India 2025',
     date: 'September 2025',
@@ -353,6 +362,13 @@ export const recommendations = [
 ];
 
 export const extraCurricular: ExtraCurricular[] = [
+  {
+    id: 'floodsupport-volunteer',
+    title: 'Volunteer Developer – FloodSupport Sri Lanka',
+    organization: 'Community Disaster Relief Initiative – Sri Lanka',
+    role: 'Developer',
+    year: '2025'
+  },
   {
     id: 'judge-hackelite',
     title: 'Judge Board – HackElite 2.0',
