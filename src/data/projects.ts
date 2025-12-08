@@ -133,12 +133,12 @@ Implemented encrypted telemetry uploads to a Flask backend with reliable remote 
     id: 'transx',
     title: 'TransX – Transformer Maintenance Full-Stack Web Platform',
     category: 'Software',
-    techStack: ['React', 'Spring Boot', 'Flask', 'MySQL', 'YOLOv8', 'Microservices'],
+    techStack: ["Spring Boot", "React", "TypeScript", "Java", "MySQL", "Flask", "YOLOv8p2", "Vite"],
     summary: 'AI-Powered Thermal Inspection & Maintenance System with YOLOv8 anomaly detection',
     description: `Developed a full-stack transformer maintenance platform integrating YOLOv8 thermal anomaly detection, canvas-based annotation tools, and a complete inspection workflow for end-to-end transformer health assessment.
 
 Built using a microservice architecture with React, Spring Boot, Flask, and MySQL, enabling automated reporting, real-time collaboration, and scalable transformer data management.`,
-    images: [],
+    images: ['/img/Projects/TransX/1.png', '/img/Projects/TransX/2.png', '/img/Projects/TransX/3.jpg'],
     githubLink: 'https://github.com/PrabathBK/TransX-Transformer-Maintenance-Platform',
     featured: false,
     importance: 2,
