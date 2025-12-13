@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageCircle, X, Send, Bot, User, Sparkles, Loader2 } from 'lucide-react';
+import Image from 'next/image';
 
 interface Message {
     id: string;
@@ -26,6 +27,41 @@ export default function Chatbot() {
     const [hasNewMessage, setHasNewMessage] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
+
+    // Function to convert URLs in text to clickable links
+    const linkifyText = (text: string) => {
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        const emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/g;
+        
+        const parts = text.split(/(\s+)/);
+        
+        return parts.map((part, index) => {
+            if (urlRegex.test(part)) {
+                return (
+                    <a
+                        key={index}
+                        href={part}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline break-all"
+                    >
+                        {part}
+                    </a>
+                );
+            } else if (emailRegex.test(part)) {
+                return (
+                    <a
+                        key={index}
+                        href={`mailto:${part}`}
+                        className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline"
+                    >
+                        {part}
+                    </a>
+                );
+            }
+            return part;
+        });
+    };
 
     const scrollToBottom = useCallback(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -97,6 +133,7 @@ export default function Chatbot() {
         "What FPGA projects has Prabath worked on?",
         "Tell me about his achievements",
         "What are his technical skills?",
+        "How can I contact Prabath?",
     ];
 
     return (
@@ -158,17 +195,21 @@ export default function Chatbot() {
                         {/* Header */}
                         <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-4 flex items-center gap-3">
                             <div className="relative">
-                                <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                                    <Bot className="w-5 h-5 text-white" />
+                                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white/30">
+                                    <Image
+                                        src="/img/prof_pic.jpg"
+                                        alt="Prabath Wijethilaka"
+                                        width={40}
+                                        height={40}
+                                        className="object-cover"
+                                    />
                                 </div>
                                 <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-blue-600 rounded-full" />
                             </div>
                             <div className="flex-1">
                                 <h3 className="text-white font-semibold flex items-center gap-2">
-                                    Portfolio Assistant
-                                    <Sparkles className="w-4 h-4 text-yellow-300" />
+                                    Prabath's AI Assistant 
                                 </h3>
-                                <p className="text-blue-100 text-xs">Powered by Gemini AI</p>
                             </div>
                             <button
                                 onClick={toggleChat}
@@ -205,7 +246,9 @@ export default function Chatbot() {
                                                 : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-bl-md shadow-sm border border-gray-100 dark:border-gray-700'
                                             }`}
                                     >
-                                        <p className="text-sm leading-relaxed whitespace-pre-wrap">{message.content}</p>
+                                        <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                                            {linkifyText(message.content)}
+                                        </p>
                                     </div>
                                 </motion.div>
                             ))}
