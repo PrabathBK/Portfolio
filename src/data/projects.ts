@@ -2,6 +2,29 @@ import { Project } from './types';
 
 export const projects: Project[] = [
   {
+    id: 'chip-aware-instrument',
+    title: 'Chip-Aware Instrument (ongoing) | Final Year Project',
+    category: 'FPGA/RTL',
+    techStack: ['ML', 'Transformer', 'Rust', 'FPGA', 'KR260', 'Artix-7', 'I²C', 'SPI', 'JESD204B', 'PWM', 'IC Testing', 'Datasheet Parsing'],
+    summary: 'Unified IC Testing Platform with ML-Driven Datasheet Parsing - Collaboration with aevocode',
+    description: `Developed unified hardware-software platform for IC configuration, testing & verification. Transformer ML agent auto-extracts datasheet metadata into ICED files. FPGA (KR260/Artix-7) supports I²C/SPI/JESD204B/PWM across AD9152 DAC, MCF8329A motor controller & TAC5212 ADC. Rust/Tauri CLI+GUI eliminates vendor lock-in, saving engineers hours of manual setup.
+
+Key Features:
+
+• Developed transformer-based ML agent that auto-extracts structured IC metadata from datasheets, enabling configuration across diverse protocols
+
+• Built Rust GUI with IC configuration/monitoring, driving KR260 and Artix 7 FPGA controllers through modular expansion PCB with sensing signal analyzer
+
+• Unified platform supporting multiple protocols (I²C, SPI, JESD204B, PWM) across diverse ICs including AD9152 DAC, MCF8329A motor controller, and TAC5212 ADC
+
+• Collaboration with aevocode `,
+    images: ["/img/Projects/FYP/1.png", "/img/Projects/FYP/2.png"],
+    githubLink: 'https://github.com/orgs/evoforgelabs/repositories',
+    featured: true,
+    importance: 1,
+    date: 'June 2025 - Present'
+  },
+  {
     id: 'floodsupport-dashboard',
     title: 'FloodSupport – Real-Time Disaster Analytics Dashboard',
     category: 'Software',
