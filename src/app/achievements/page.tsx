@@ -227,11 +227,11 @@ export default function AchievementsPage() {
                         <span>{award.date}</span>
                       </div>
 
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-xl font-bold mb-3 line-clamp-2 text-gray-900 [@media(prefers-color-scheme:dark)]:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {award.title}
                       </h3>
 
-                      <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3 text-sm">
+                      <p className="text-gray-700 [@media(prefers-color-scheme:dark)]:text-gray-300 mb-4 line-clamp-3 text-sm">
                         {award.description}
                       </p>
 

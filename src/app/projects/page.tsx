@@ -147,12 +147,12 @@ export default function ProjectsPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold mb-2 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl font-bold mb-2 line-clamp-2 text-gray-900 [@media(prefers-color-scheme:dark)]:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {project.title}
                   </h3>
 
                   {/* Summary */}
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+                  <p className="text-gray-700 [@media(prefers-color-scheme:dark)]:text-gray-300 text-sm mb-4 line-clamp-3">
                     {project.summary}
                   </p>
 
@@ -161,13 +161,13 @@ export default function ProjectsPage() {
                     {project.techStack.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
+                        className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 [@media(prefers-color-scheme:dark)]:text-gray-200 text-xs rounded"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.techStack.length > 3 && (
-                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 text-xs rounded">
+                      <span className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 [@media(prefers-color-scheme:dark)]:text-gray-400 text-xs rounded">
                         +{project.techStack.length - 3}
                       </span>
                     )}

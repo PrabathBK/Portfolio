@@ -94,14 +94,14 @@ export default function AchievementDetailPage({ params }: { params: Promise<{ id
 
               <div className="space-y-6">
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Category</p>
+                  <p className="text-sm text-gray-600 [@media(prefers-color-scheme:dark)]:text-gray-400 mb-1">Category</p>
                   <span className="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
                     {award.category}
                   </span>
                 </div>
 
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Date Awarded</p>
+                  <p className="text-sm text-gray-600 [@media(prefers-color-scheme:dark)]:text-gray-400 mb-1">Date Awarded</p>
                   <div className="flex items-center gap-2 text-gray-900 dark:text-white font-medium">
                     <Calendar className="w-4 h-4 text-gray-500" />
                     {award.date}
@@ -109,7 +109,7 @@ export default function AchievementDetailPage({ params }: { params: Promise<{ id
                 </div>
 
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">Organization</p>
+                  <p className="text-sm text-gray-600 [@media(prefers-color-scheme:dark)]:text-gray-400 mb-1">Organization</p>
                   <p className="text-gray-900 dark:text-white font-medium">{award.organization}</p>
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function AchievementDetailPage({ params }: { params: Promise<{ id
                   {award.details.map((detail, index) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                      <span className="text-gray-700 dark:text-gray-300">{detail}</span>
+                      <span className="text-gray-800 [@media(prefers-color-scheme:dark)]:text-gray-300">{detail}</span>
                     </li>
                   ))}
                 </ul>
@@ -178,7 +178,7 @@ export default function AchievementDetailPage({ params }: { params: Promise<{ id
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-1 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {related.title}
                     </h4>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">{related.date}</p>
+                    <p className="text-sm text-gray-600 [@media(prefers-color-scheme:dark)]:text-gray-400">{related.date}</p>
                   </div>
                 </Link>
               ))}

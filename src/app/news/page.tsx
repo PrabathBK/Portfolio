@@ -168,11 +168,11 @@ export default function NewsPage() {
                         </div>
                       </div>
 
-                      <h3 className="text-2xl md:text-3xl font-bold mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900 [@media(prefers-color-scheme:dark)]:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {item.title}
                       </h3>
 
-                      <p className="text-gray-600 dark:text-gray-400 mb-6 line-clamp-3">
+                      <p className="text-gray-700 [@media(prefers-color-scheme:dark)]:text-gray-300 mb-6 line-clamp-3">
                         {item.description}
                       </p>
 

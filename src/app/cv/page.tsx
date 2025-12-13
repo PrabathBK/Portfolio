@@ -114,8 +114,8 @@ export default function CVPage() {
                         key={item.id}
                         onClick={() => scrollToSection(item.id)}
                         className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all ${isActive
-                            ? 'bg-blue-600 text-white shadow-lg'
-                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                          ? 'bg-blue-600 text-white shadow-lg'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                           }`}
                       >
                         <Icon className="w-4 h-4" />
@@ -198,7 +198,7 @@ export default function CVPage() {
                       {personalInfo.interests.map((interest) => (
                         <span
                           key={interest}
-                          className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-sm"
+                          className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-800 [@media(prefers-color-scheme:dark)]:text-blue-300 rounded-full text-sm"
                         >
                           {interest}
                         </span>
@@ -429,7 +429,7 @@ export default function CVPage() {
                       {skills.languages.map((lang) => (
                         <span
                           key={lang}
-                          className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-sm"
+                          className="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-800 [@media(prefers-color-scheme:dark)]:text-blue-300 rounded-full text-sm"
                         >
                           {lang}
                         </span>
@@ -446,7 +446,7 @@ export default function CVPage() {
                       {skills.developerTools.map((tool) => (
                         <span
                           key={tool}
-                          className="px-3 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 rounded-full text-sm"
+                          className="px-3 py-1 bg-green-50 dark:bg-green-900/20 text-green-800 [@media(prefers-color-scheme:dark)]:text-green-300 rounded-full text-sm"
                         >
                           {tool}
                         </span>
@@ -463,7 +463,7 @@ export default function CVPage() {
                       {skills.frameworks.map((framework) => (
                         <span
                           key={framework}
-                          className="px-3 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 rounded-full text-sm"
+                          className="px-3 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-800 [@media(prefers-color-scheme:dark)]:text-purple-300 rounded-full text-sm"
                         >
                           {framework}
                         </span>
@@ -480,7 +480,7 @@ export default function CVPage() {
                       {skills.databases.map((db) => (
                         <span
                           key={db}
-                          className="px-3 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 rounded-full text-sm"
+                          className="px-3 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-800 [@media(prefers-color-scheme:dark)]:text-orange-300 rounded-full text-sm"
                         >
                           {db}
                         </span>
@@ -496,7 +496,7 @@ export default function CVPage() {
                     {skills.softSkills.map((skill) => (
                       <span
                         key={skill}
-                        className="px-3 py-1 bg-pink-50 dark:bg-pink-900/20 text-pink-700 dark:text-pink-300 rounded-full text-sm"
+                        className="px-3 py-1 bg-pink-50 dark:bg-pink-900/20 text-pink-800 [@media(prefers-color-scheme:dark)]:text-pink-300 rounded-full text-sm"
                       >
                         {skill}
                       </span>

@@ -1,11 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -13,22 +12,11 @@ const navItems = [
   { name: 'CV', path: '/cv' },
   { name: 'Achievements', path: '/achievements' },
   { name: 'News', path: '/news' },
-
 ];
 
 export default function Navbar() {
-  const [mounted, setMounted] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
   const pathname = usePathname();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-white/70 dark:bg-black/70 border-b border-gray-200/50 dark:border-blue-900/30 supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-black/60">
@@ -36,7 +24,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo/Name */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
               Prabath Wijethilaka
             </span>
           </Link>
