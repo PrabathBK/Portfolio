@@ -112,7 +112,7 @@ Key Features: Low resource utilization, deterministic arbitration, full hardware
   },
   {
     id: 'cnn-accelerator',
-    title: 'CNN Accelerator RTL Implementation',
+    title: 'CNN Accelerator RTL Implementation (Ongoing)',
     category: 'FPGA/RTL',
     techStack: ['Xilinx Zynq-7020', 'INT8', 'SystemVerilog', 'AXI4 DMA', '32-bit ISA', 'Vivado', 'ARM-FPGA'],
     summary: 'High-Performance INT8 CNN Accelerator for Zynq-7020 FPGA with 31.36 GOP/s throughput',
@@ -122,7 +122,7 @@ Developed a custom 32-bit ISA, hierarchical memory system (PE register files + g
 
 Includes matrix-vector multiplier implementation with UART communication and AXI Stream interfaces.`,
     images: ['/img/Projects/CNN/1.jpeg'],
-    githubLink: 'https://github.com/PrabathBK/Matrix_vector_mul_UART',
+    // githubLink: 'https://github.com/PrabathBK/Matrix_vector_mul_UART',
     featured: true,
     importance: 1,
     date: 'Present'
