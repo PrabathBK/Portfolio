@@ -70,6 +70,22 @@ export const experience: Experience[] = [
       'Explored Linux kernel driver operation for configuring the Xilinx Alveo U50 data-center FPGA',
       'Integrated Model Checking principles into the verification methodology to strengthen functional correctness and coverage'
     ]
+  },
+  {
+    id: 'hydrolink',
+    title: 'Hydrolink — Team Leader',
+    organization: 'Champions — SLIoT Challenge 2023',
+    location: 'Sri Lanka',
+    startDate: '2023',
+    endDate: '2024',
+    description: 'Hydrolink is an innovative IoT solution designed to transform water-tank management. Our team developed the product from concept to deployment, earning a grant from the World Bank to manufacture a pilot batch and create a market-ready device',
+    bulletPoints: [
+      'Led the team to secure first place at the SLIoT Challenge 2023',
+      'Earned a grant from the World Bank to manufacture a pilot batch',
+      'Developed the product from concept to deployment, creating a market-ready device',
+      'Strengthened experience in leadership, project management, business planning, and product marketing',
+      'Launched official website: hydrolink.auradigitallabs.com'
+    ]
   }
 ];
 

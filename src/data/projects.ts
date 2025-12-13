@@ -37,6 +37,57 @@ Developed a lightweight systolic array accelerator featuring INT8 GEMM, 16×16 t
     date: 'Sep 2025'
   },
   {
+    id: 'ecowatt',
+    title: 'EcoWatt – Smart Inverter Monitoring & Control System',
+    category: 'IoT/Embedded',
+    techStack: ['ESP32', 'PlatformIO', 'Python', 'Flask', 'React', 'MQTT', 'SQLite', 'Modbus RTU', 'FOTA', 'AES-128', 'HMAC-SHA256', 'RSA-2048'],
+    summary: 'Production-ready IoT platform for real-time solar inverter monitoring with secure telemetry and remote control',
+    description: `Designed and developed a production-ready IoT solution for real-time solar inverter monitoring featuring:
+
+Security & FOTA: Triple-layer upload protection (nonce validation, HMAC-SHA256, AES-128-CBC) + Secure firmware updates with RSA-2048 signatures and automatic rollback
+
+Data Compression: Adaptive algorithm selection achieving 85% data reduction (140→21 bytes) through intelligent real-time compression tournament
+
+Power Management: Peripheral gating reducing consumption by 10-20mA, with production support for CPU frequency scaling, light/deep sleep modes
+
+Remote Control: Bidirectional command queue enabling real-time device configuration, parameter adjustment, and sub-second command latency
+
+Live Dashboard: Professional React interface with real-time visualization, power analytics, device monitoring, and fault injection testing
+
+Modbus Support: Ring buffer architecture supporting both Modbus RTU (production) and WiFi simulation (development)
+
+Production Quality: 30+ test suites, fault injection framework, security validation with comprehensive testing`,
+    images: ['/img/Projects/ecowatt/dashboard.png', '/img/Projects/ecowatt/configuration.png', '/img/Projects/ecowatt/fota.png', '/img/Projects/ecowatt/power.png', '/img/Projects/ecowatt/testing.png'],
+    githubLink: 'https://github.com/RPX2001/EcoWatt_TeamPowerPort',
+    featured: true,
+    importance: 2,
+    date: 'Nov 2025'
+  },
+  {
+    id: 'serial-bus',
+    title: 'Serial Bus Design',
+    category: 'FPGA/RTL',
+    techStack: ['SystemVerilog', 'FPGA', 'Intel Cyclone IV', 'Bus Protocols', 'UART', 'Quartus Prime', 'Hardware Verification', 'Clock Domain Crossing', 'FIFO'],
+    summary: 'Custom RTL bus interconnect with priority arbitration and split transactions',
+    description: `Architected a multi-master serial bus system on Intel Cyclone IV FPGA featuring priority arbitration, split transactions, and UART-based inter-FPGA bridge.
+
+The design utilized 1-bit serial data transmission to minimize routing complexity while supporting:
+• 2 masters and 3 slaves (up to 10KB total memory)
+• Priority-based arbitration for multi-master coordination
+• Split transaction protocol for efficient bus utilization
+• Clock domain crossing via FIFOs for asynchronous operation
+• UART bridge enabling inter-FPGA communication
+
+Verified through comprehensive RTL verification and successful hardware implementation on Intel Cyclone IV FPGA using Quartus Prime.
+
+Key Features: Low resource utilization, deterministic arbitration, full hardware validation, and modular architecture for scalability.`,
+    images: ['/img/Projects/Serial-Bus/1.jpeg'],
+    githubLink: 'https://github.com/PrabathBK/Serial-System-Bus',
+    featured: true,
+    importance: 1,
+    date: 'Nov 2025'
+  },
+  {
     id: 'cnn-accelerator',
     title: 'CNN Accelerator RTL Implementation',
     category: 'FPGA/RTL',
@@ -115,21 +166,6 @@ Skills developed: SystemVerilog, Vivado design flow, RISC-V architecture, pipeli
     date: 'Jan 2025'
   },
   {
-    id: 'ecowatt',
-    title: 'EcoWatt – Smart Inverter Monitoring & Control System',
-    category: 'IoT/Embedded',
-    techStack: ['ESP32', 'Modbus RTU', 'Flask', 'IoT', 'RSA-2048', 'AES', 'FOTA'],
-    summary: 'ESP32-Based IoT Platform for Solar Inverter Telemetry with 96% data compression',
-    description: `Developed an ESP32-powered IoT system for real-time solar inverter monitoring using Modbus RTU polling and an adaptive compression pipeline achieving ~96% data size reduction.
-
-Implemented encrypted telemetry uploads to a Flask backend with reliable remote command execution and a secure FOTA pipeline using RSA-2048 signature verification and AES-encrypted firmware delivery.`,
-    images: [],
-    githubLink: 'https://github.com/RPX2001/EcoWatt_TeamPowerPort',
-    featured: false,
-    importance: 2,
-    date: 'Present'
-  },
-  {
     id: 'transx',
     title: 'TransX – Transformer Maintenance Full-Stack Web Platform',
     category: 'Software',
@@ -142,20 +178,6 @@ Built using a microservice architecture with React, Spring Boot, Flask, and MySQ
     githubLink: 'https://github.com/PrabathBK/TransX-Transformer-Maintenance-Platform',
     featured: false,
     importance: 2,
-    date: 'Present'
-  },
-  {
-    id: 'serial-bus-design',
-    title: 'Serial Bus Design',
-    category: 'FPGA/RTL',
-    techStack: ['SystemVerilog', 'Verilator', 'Vivado', 'Quartus', 'RTL', 'Arbitration'],
-    summary: 'Custom RTL Bus Interconnect with Arbitration & Split Transactions',
-    description: `Developing a custom RTL serial bus featuring a fixed-priority arbiter (Master0 > Master1), range-based address decoder, and parameterized master/slave interface modules.
-
-Implemented split-transaction handling with full verification using module-level and top-level testbenches (Verilator + Vivado), and FPGA-ready synthesis flows for both Vivado and Quartus.`,
-    images: [],
-    featured: false,
-    importance: 3,
     date: 'Present'
   },
   {
