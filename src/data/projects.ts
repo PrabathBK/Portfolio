@@ -25,7 +25,7 @@ The dashboard provides critical situational awareness to disaster response coord
     category: 'FPGA/RTL',
     techStack: ['FPGA', 'RISC-V', 'SystemVerilog', 'INT8 GEMM', 'AXI4', 'VEGA AT1051', 'Bare Metal', 'Hardware Acceleration'],
     summary: '1st Runners-Up at DVCon India 2025 - Custom accelerator for full Qwen3 inference pipeline on RISC-V SoC',
-    description: `Designed a complete hardware-software co-design framework enabling Qwen3 SLM/LLM inference on the VEGA AT1051 RISC-V SoC, reducing latency from minutes to seconds through FPGA-accelerated GEMM offloading.
+    description: `Designed a complete hardware-software co-design framework enabling Qwen3 SLM inference on the VEGA AT1051 RISC-V SoC, reducing latency from minutes to seconds through FPGA-accelerated GEMM offloading.
 
 Built a full bare-metal runtime capable of executing the entire Qwen3 pipeline, including custom memory allocation, tiling schedule generation, AXI-based data movement, and CPU–FPGA synchronization for deterministic sequential inference.
 
@@ -38,7 +38,7 @@ Developed a lightweight systolic array accelerator featuring INT8 GEMM, 16×16 t
   },
   {
     id: 'ecowatt',
-    title: 'EcoWatt – Smart Inverter Monitoring & Control System',
+    title: 'EcoWatt – Smart SolarInverter Monitoring & Control System',
     category: 'IoT/Embedded',
     techStack: ['ESP32', 'PlatformIO', 'Python', 'Flask', 'React', 'MQTT', 'SQLite', 'Modbus RTU', 'FOTA', 'AES-128', 'HMAC-SHA256', 'RSA-2048'],
     summary: 'Production-ready IoT platform for real-time solar inverter monitoring with secure telemetry and remote control',
@@ -258,7 +258,7 @@ Complete solution including PCB design, mobile app, and cloud integration.`,
   },
   {
     id: 'companyb',
-    title: 'Full-Stack Solution Development with Modular OOP Design',
+    title: 'Factory Assembly Line Management Full-Stack Development with Modular OOP Design',
     category: 'Software',
     techStack: ['Spring Boot', 'Java', 'MongoDB', 'React', 'Postman', 'REST API', 'Vite'],
     summary: 'Manufacturing and Assembly Line Planning and Management Subsystem for PCB Manufacturing',
@@ -271,7 +271,7 @@ Built with modular OOP design principles for scalability and maintainability.`,
     githubLink: 'https://github.com/PrabathBK/CompanyB',
     featured: false,
     importance: 2,
-    date: 'May 2024'
+    date: 'Jan 2024 - May 2024'
   },
   {
     id: 'analog-amplifier',
@@ -328,7 +328,7 @@ Complete with testbench verification and hardware validation.`,
     githubLink: 'https://github.com/PrabathBK/FPGA_UART',
     videoLink: 'https://youtu.be/CayM7fCQ5rc',
     featured: false,
-    importance: 4,
+    importance: 3,
     date: 'May 2024'
   },
   {

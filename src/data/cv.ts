@@ -6,7 +6,7 @@ export const personalInfo: PersonalInfo = {
   email: 'prabathwijethilaka50@gmail.com',
   phone: '+94(0)714745349',
   location: 'Sri Lanka',
-  website: 'https://prabathbk.github.io',
+  website: 'https://prabath.auradigitallabs.com',
   github: 'https://github.com/PrabathBK',
   linkedin: 'https://www.linkedin.com/in/prabath-wijethilaka-4950b220b/',
   facebook: 'https://www.facebook.com/share/1BgzRX6GWA/',
