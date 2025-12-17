@@ -6,12 +6,12 @@ export const projects: Project[] = [
     title: 'Chip-Aware Instrument (ongoing) | Final Year Project',
     category: 'FPGA/RTL',
     techStack: ['ML', 'Transformer', 'Rust', 'FPGA', 'KR260', 'Artix-7', 'I²C', 'SPI', 'JESD204B', 'PWM', 'IC Testing', 'Datasheet Parsing'],
-    summary: 'Unified IC Testing Platform with ML-Driven Datasheet Parsing - Collaboration with aevocode',
-    description: `Developed unified hardware-software platform for IC configuration, testing & verification. Transformer ML agent auto-extracts datasheet metadata into ICED files. FPGA (KR260/Artix-7) supports I²C/SPI/JESD204B/PWM across AD9152 DAC, MCF8329A motor controller & TAC5212 ADC. Rust/Tauri CLI+GUI eliminates vendor lock-in, saving engineers hours of manual setup.
+    summary: 'Unified IC Testing Platform with AI-Driven Datasheet Parsing - Collaboration with aevocode',
+    description: `Developed unified hardware-software platform for IC configuration, testing & verification. Transformer AI agent auto-extracts datasheet metadata into ICED files. FPGA (KR260/Artix-7) supports I²C/SPI/JESD204B/PWM across AD9152 DAC, MCF8329A motor controller & TAC5212 ADC. Rust/Tauri CLI+GUI eliminates vendor lock-in, saving engineers hours of manual setup.
 
 Key Features:
 
-• Developed transformer-based ML agent that auto-extracts structured IC metadata from datasheets, enabling configuration across diverse protocols
+• Developed transformer-based AI agent that auto-extracts structured IC metadata from datasheets, enabling configuration across diverse protocols
 
 • Built Rust GUI with IC configuration/monitoring, driving KR260 and Artix 7 FPGA controllers through modular expansion PCB with sensing signal analyzer
 
@@ -112,20 +112,22 @@ Key Features: Low resource utilization, deterministic arbitration, full hardware
   },
   {
     id: 'cnn-accelerator',
-    title: 'CNN Accelerator RTL Implementation (Ongoing)',
+    title: 'SIMD Processor Array for Convolution Neural Network (Ongoing)',
     category: 'FPGA/RTL',
-    techStack: ['Xilinx Zynq-7020', 'INT8', 'SystemVerilog', 'AXI4 DMA', '32-bit ISA', 'Vivado', 'ARM-FPGA'],
-    summary: 'High-Performance INT8 CNN Accelerator for Zynq-7020 FPGA with 31.36 GOP/s throughput',
-    description: `Designed and implemented a high-performance CNN accelerator IP core for the Xilinx Zynq-7020, featuring a 14×14 INT8 processing-element array delivering 31.36 GOP/s at 80 MHz.
+    techStack: ['Xilinx Zynq-7000', 'ZedBoard', 'SystemVerilog', 'AXI4 DMA', '32-bit ISA', 'Vivado', 'ARM-FPGA', 'Systolic Array', 'Row-Stationary Dataflow'],
+    summary: 'High-Performance CNN Processor with 32-bit ISA on ZedBoard Zynq-7000',
+    description: `High-Performance CNN Processor with 32-bit ISA on ZedBoard Zynq-7000
 
-Developed a custom 32-bit ISA, hierarchical memory system (PE register files + global buffers), and AXI4 DMA integration for seamless ARM–FPGA communication.
+Key Features:
+
+• Architected a systolic array accelerator with custom 32-bit ISA, row-stationary dataflow, pipelined processing element design, and hierarchical memory subsystem with PE register files, global buffers, and AXI4 DMA engine for ARM-FPGA communication.
 
 Includes matrix-vector multiplier implementation with UART communication and AXI Stream interfaces.`,
     images: ['/img/Projects/CNN/1.jpeg'],
     // githubLink: 'https://github.com/PrabathBK/Matrix_vector_mul_UART',
     featured: true,
     importance: 1,
-    date: 'Present'
+    date: 'Aug 2025 - Present'
   },
   {
     id: 'hydrolink',
