@@ -72,6 +72,19 @@ export const experience: Experience[] = [
     ]
   },
   {
+    id: 'aura-digital-labs',
+    title: 'Co-Founder',
+    organization: 'Aura Digital Labs',
+    location: 'Remote',
+    startDate: 'May 2024',
+    endDate: 'Present',
+    description: 'Co-founded and led a digital solutions agency delivering embedded systems, full-stack applications, computer vision, and automation solutions for small-to-medium enterprises.',
+    bulletPoints: [
+      'Co-founded and led a digital solutions agency delivering embedded systems, full-stack applications, computer vision, and automation solutions for small-to-medium enterprises',
+      'Website: https://www.auradigitallabs.com'
+    ]
+  },
+  {
     id: 'hydrolink',
     title: 'Hydrolink — Team Leader',
     organization: 'Champions — SLIoT Challenge 2023',
