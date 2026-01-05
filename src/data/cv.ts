@@ -211,7 +211,8 @@ export const awards: Award[] = [
     description: 'Academic excellence recognition',
     details: [
       'Semester 2',
-      'Semester 6'
+      'Semester 6',
+      'Semester 7'
     ]
   }
 ];
