@@ -32,10 +32,10 @@ export const education: Education[] = [
     location: 'Sri Lanka',
     startDate: '2022',
     endDate: 'Present',
-    gpa: '3.69/4.0',
+    gpa: '3.70/4.0',
     details: [
-      'CGPA: 3.69/4.0',
-      "Dean's List: Semester 2, 6",
+      'CGPA: 3.70/4.0',
+      "Dean's List: Semester 2, 6, 7",
       'Focus: FPGA Design, Hardware Acceleration, Computer Architecture'
     ]
   },
